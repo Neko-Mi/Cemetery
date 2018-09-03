@@ -1,0 +1,33 @@
+<div  class="cemeterys">
+  
+  <div class="dashboard">
+      <a *ngFor="let cemetery of cemeterys" 
+        [class.selected]="cemetery === selectedCemetery"
+        (click)="onSelectCemetery(cemetery)"> 
+
+        <div class="el">
+
+            
+              <span class="name">{{cemetery.name}}</span>
+              <span class="other">Секторов: {{cemetery.sectors}}</span>
+              <span class="other">Мест: {{cemetery.places}}</span>
+              
+              <i class="material-icons icons"
+              (click)="onSelectChange(cemetery)">
+                  create
+                  </i>
+              <i class="material-icons icons" 
+              (click)="onSelectInfo(cemetery)">
+                info
+                </i>
+                 
+        </div>
+         
+      </a> 
+
+     
+  </div>
+
+</div>
+<app-cemeterys-details [cemetery]="selectedInfo" [open]="open" (onClose)="onClosed($event)" ></app-cemeterys-details>
+<app-change-cemetery [cemetery]="selectedInfo" [open]="open_change" (onClose)="onClosed($event)"></app-change-cemetery>

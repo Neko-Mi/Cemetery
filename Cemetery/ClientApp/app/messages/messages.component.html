@@ -1,0 +1,9 @@
+<div class="address">
+
+   <div *ngIf="messageService.messages.length">
+
+    <span *ngFor='let message of messageService.messages'> {{message}} </span>
+  
+  </div>
+
+</div>

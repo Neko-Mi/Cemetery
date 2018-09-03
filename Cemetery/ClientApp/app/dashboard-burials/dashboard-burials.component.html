@@ -1,0 +1,39 @@
+<div  class="cemeterys">
+
+  <div class="dashboard">
+      
+      <a *ngFor="let burial of burials" 
+        [class.selected]="burial === selectedBurial"
+        (click)="onSelectBurial(burial)"> 
+        <!-- <div class="address">
+            <span>{{burial.id}} </span>
+          </div> -->
+        <div class="el">
+
+            
+              <span class="name">{{burial.fullName}}</span>
+
+              <span class="other top">{{burial.birthDate | date:'dd-MM-yyyy'}} - {{burial.deathDate | date:'dd-MM-yyyy'}}</span>
+              
+              <span class="other ">{{burial.burialDate | date:'dd-MM-yyyy'}}</span>
+
+
+              <span class="other top">Сектор: {{burial.place.sector.sectorName}}</span>
+              <span class="other">Ряд: {{burial.row}}</span>
+              <span class="other">Место: {{burial.place.number}}</span>
+              
+              <i class="material-icons icons">
+                  create
+                  </i>
+              <i class="material-icons icons"
+              (click)="onSelectInfo(burial)">
+                info
+                </i>
+                 
+        </div>
+         
+      </a> 
+  </div>
+  
+</div>
+<app-burials-details [burial]="selectedInfo" [open]="open" (onClose)="onClosed($event)" ></app-burials-details>

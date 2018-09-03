@@ -1,0 +1,197 @@
+<div class="background"
+[class.selected]="close === open"
+ >
+
+<div *ngIf="burial" class="details"
+  [class.selected]="close === open">
+
+  <div class="navigation">
+
+      <i class="material-icons" (click)="onSelectClose()">
+      clear
+      </i>
+      
+      <div class="nav1">
+        <span>Информация</span>
+      </div>
+
+      <div class="nav2" 
+        (click)="onSelectPhoto()">
+        <span >
+        Фотографии
+        </span>
+      </div>
+  <hr class="tophr"> 
+
+  </div>
+ 
+
+
+<div *ngIf="burial" class="dop"
+    [class.selected]="close === open">
+    
+
+        <div class="col left names">
+          <span>ФИО</span>
+        </div>
+        <div class="col right top">
+          <span>{{burial.fullName}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Дата смерти</span>
+        </div>
+        <div class="col right">
+            <span>{{burial.deathDate | date:'dd-MM-yyyy'}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Дата захоронения</span>
+        </div>
+        <div class="col right">
+            <span>{{burial.burialDate | date:'dd-MM-yyyy'}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Дата рождения</span>
+        </div>
+        <div class="col right">
+            <span>{{burial.birthDate | date:'dd-MM-yyyy'}}</span>
+        </div>
+        
+
+        <hr class="mt8">
+
+
+        <div class="col left">
+          <span>Номер св-ва о смерти</span>
+        </div>
+        <div class="col right">
+            <span>{{burial.deathCertificate}}</span>
+        </div>
+          
+        <div class="col left names">
+          <span>Загс выд. св-во о смерти</span>
+        </div>
+        <div class="col right top">
+          <span>{{burial.zags}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Дата выд. св-ва о смерти</span>
+        </div>
+        <div class="col right">
+          <span>{{burial.datecer}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Номер в арх. книге</span>
+        </div>
+        <div class="col right">
+            <span>{{burial.archivedNumber}}</span>
+        </div>
+          
+
+        <hr class="mt8">
+
+
+        <div class="col left names">
+          <span>ФИО ответственного</span>
+        </div>
+        <div class="col right top">
+          <span>{{burial.relative.relativeFullName}}</span>
+        </div>
+
+        <div class="col left names">
+          <span>Адрес ответственного</span>
+        </div>
+        <div class="col right top">
+          <span>{{burial.relative.address}}</span>
+        </div>
+
+        <div class="col left names">
+          <span>Адрес регистрации</span>
+        </div>
+        <div class="col right top">
+          <span>{{burial.relative.contacts}}</span>
+        </div>
+          
+        <hr class="mt8">
+
+
+        <div class="col left">
+          <span>Глубина</span>
+        </div>
+        <div class="col right">
+          <span>{{burial.other.graveDepth}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Урна с прахом</span>
+        </div>
+        <div class="col right">
+          <span>{{burial.funeralUrn}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Дата кремации</span>
+        </div>
+        <div class="col right">
+          <span>{{burial.datacr}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Вид захоронения</span>
+        </div>
+        <div class="col right">
+          <span>{{burial.other.soilType}}</span>
+        </div>
+
+
+        <hr class="mt8">
+
+
+        <div class="col left names">
+          <span>Кладбище</span>
+        </div>
+        <div class="col right top">
+          <span>{{burial.place.sector.cemetery.name}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Сектор</span>
+        </div>
+        <div class="col right">
+          <span>{{burial.place.sector.sectorName}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Ряд</span>
+        </div>
+        <div class="col right">
+          <span>{{burial.row}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Место</span>
+        </div>
+        <div class="col right">
+          <span>{{burial.place.number}}</span>
+        </div>
+
+
+        
+        
+
+
+       
+        <div class="btn">
+          <span class="show">ПОКАЗАТЬ НА КАРТЕ</span>
+        </div>
+        
+  </div>
+  </div>
+
+</div>
+
+<app-burial-photo [burial]="burial" [open]="selectedPhoto" (onClose)="onClosed($event)" (onInfo)="onInfo($event)"></app-burial-photo>

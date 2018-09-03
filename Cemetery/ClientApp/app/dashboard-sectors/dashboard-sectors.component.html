@@ -1,0 +1,30 @@
+<div  class="cemeterys">
+
+
+  <div class="dashboard">
+      <a *ngFor="let sector of sectors" 
+        [class.selected]="sector === selectedSector"
+        (click)="onSelectSector(sector)"> 
+
+        <div class="el">
+
+            
+              <span class="name">{{sector.sectorName}}</span>
+              <span class="other">Мест: {{sector.places}}</span>
+              <span class="other">Захоронений: {{sector.burials}}</span>
+              
+              <i class="material-icons icons">
+                  create
+                  </i>
+              <i class="material-icons icons"
+              (click)="onSelectInfo(sector)">
+                info
+                </i>
+                 
+        </div>
+         
+      </a> 
+  </div>
+  
+</div>
+<app-sectors-details [sector]="selectedInfo" [open]="open" (onClose)="onClosed($event)" ></app-sectors-details>

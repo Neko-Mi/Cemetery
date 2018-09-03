@@ -1,0 +1,461 @@
+// import { Burial } from './burial';
+
+// export const BURIALS: Burial[] = [
+//     {
+//         id: 10,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино",
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+        
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0",
+
+//         // number_death: 'СВ-123456',
+//         // zags: 'Большой тестовый загс Краснорской области',
+//         // datecer: "01.04.1933",
+//         // number_book: '5178/4952',
+        
+//         // name_s:  "Константинопольский Константин Константинович",
+//         // address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",
+//         // address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",
+
+//         // depth: 190,
+//         // urn: "Нет",
+//         // datacr: "01.04.4009",
+//         // sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 13,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 14,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 11,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 12,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     },
+//     {
+//         id: 15,
+//         name: "Константинопольский Константин Константинович",
+
+//         cemetery: "Воронино" ,
+//         sector: 5,
+//         place: 451,
+
+//         area: 4.5,
+//         imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+//         status: "Родственное",
+//         type: "Хозяйственное",
+//         row: 4,
+//         dateb: '01.04.1935',
+//         dated: '01.04.1995',
+//          datebu: '03.04.1995',          number_death: 'СВ-123456',         zags: 'Большой тестовый загс Краснорской области',         datecer: "01.04.1933",         number_book: '5178/4952',                  name_s:  "Константинопольский Константин Константинович",         address_s: "перекрёсток ул. Карла Маркса и пер. 1905 года",         address_r: "перекрёсток ул. Карла Маркса и пер. 1905 года",          depth: 190,         urn: "Нет",         datacr: "01.04.4009",         sort: "0"
+//     }
+// ];

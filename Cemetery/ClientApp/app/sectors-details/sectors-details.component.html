@@ -1,0 +1,66 @@
+<div class="background"
+[class.selected]="close === open"
+ >
+
+<div *ngIf="sector" class="details"
+  [class.selected]="close === open">
+
+  <i class="material-icons" (click)="onSelectClose()">
+    clear
+    </i>
+    <div class="nav1">
+      <span>Информация</span>
+      
+    </div>
+    <div class="nav2" 
+       (click)="onSelectPhoto()">
+      <span >
+       Фотографии
+      </span>
+    </div>
+
+    <hr class="tophr">  
+
+        <div class="col left names">
+          <span>Номер</span>
+        </div>
+        <div class="col right">
+          <span>{{sector.name}}</span>
+        </div>
+
+        
+        <hr class="mt8">
+
+          
+        <div class="col left">
+          <span>Количество мест</span>
+        </div>
+        <div class="col right">
+          <span>{{sector.places}}</span>
+        </div>
+
+
+        <div class="col left">
+          <span>Количество захоронений</span>
+        </div>
+        <div class="col right">
+          <span>{{sector.burials}}</span>
+        </div>
+
+          
+        <hr class="mt8">
+
+        <div class="col left">
+          <span>Площадь</span>
+        </div>
+        <div class="col right">
+          <span>{{sector.area}}</span>
+        </div>
+        
+        <span class="show">ПОКАЗАТЬ НА КАРТЕ</span>
+  
+  </div>
+
+</div>
+
+<app-sector-photo [sector]="sector" [open]="selectedPhoto" (onClose)="onClosed($event)" (onInfo)="onInfo($event)"></app-sector-photo>

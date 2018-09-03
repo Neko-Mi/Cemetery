@@ -1,0 +1,27 @@
+<div  class="sidebar">
+
+  <div class="logo">
+    <i class="material-icons icon"> menu </i>
+
+    <span class="gis">ГИС</span>  
+  </div>
+  
+  
+  <div class="menu">
+    <a *ngFor="let menu of menus" 
+      [class.selected]="menu === selectedMenu"
+      (click)="onSelect(menu)"
+       routerLink="/{{menu.altname}}" routerLinkActive="active"> 
+    
+      
+        <img src={{menu.img}} class="icons">
+        <span>{{menu.name}}</span>
+      
+
+      
+        
+     
+    </a> 
+  </div>
+
+</div>  

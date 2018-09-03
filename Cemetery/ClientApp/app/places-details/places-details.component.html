@@ -1,0 +1,117 @@
+<div class="background"
+[class.selected]="close === open"
+ >
+
+<div *ngIf="place" class="details"
+  [class.selected]="close === open">
+
+  <i class="material-icons" (click)="onSelectClose()">
+    clear
+    </i>
+    <div class="nav1">
+      <span>Информация</span>
+      
+    </div>
+    <div class="nav2" 
+       (click)="onSelectPhoto()">
+      <span >
+       Фотографии
+      </span>
+    </div>
+
+    <hr class="tophr">  
+
+        <div class="col left names">
+          <span>Номер</span>
+        </div>
+        <div class="col right">
+          <span>{{place.name}}</span>
+        </div>
+
+        <div class="col left names">
+          <span>Сетор</span>
+        </div>
+        <div class="col right">
+          <span >{{place.sector}}</span>
+        </div>
+
+        <div class="col left names">
+          <span>Ряд</span>
+        </div>
+        <div class="col right">
+          <span >{{place.row}}</span>
+        </div>
+        
+        <hr class="mt8">
+
+         
+
+        <div class="col left">
+          <span>Количество захоронений</span>
+        </div>
+        <div class="col right">
+          <span>{{place.burials}}</span>
+        </div>
+
+        <hr class="mt8">
+
+        <div class="col left top">
+          <span>Выдавалось удостоверение на захоронение</span>
+        </div>
+        <div class="col right top names">
+          <span>{{place.certificate}}</span>
+        </div>
+
+        <hr class="mt8">
+
+        <div class="col left">
+          <span>Статус</span>
+        </div>
+        <div class="col right">
+          <span>{{place.status}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Тип места</span>
+        </div>
+        <div class="col right">
+          <span>{{place.type_place}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Тип грунта</span>
+        </div>
+        <div class="col right">
+          <span>{{place.type_priming}}</span>
+        </div>
+
+        <hr class="mt8">
+
+        <div class="col left">
+          <span>Ширина</span>
+        </div>
+        <div class="col right">
+          <span>{{place.width}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Длина</span>
+        </div>
+        <div class="col right">
+          <span>{{place.length}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Площадь</span>
+        </div>
+        <div class="col right">
+          <span>{{place.area}}</span>
+        </div>
+        
+        <span class="show">ПОКАЗАТЬ НА КАРТЕ</span>
+  
+  </div>
+
+</div>
+
+<app-place-photo [place]="place" [open]="selectedPhoto" (onClose)="onClosed($event)" (onInfo)="onInfo($event)"></app-place-photo>

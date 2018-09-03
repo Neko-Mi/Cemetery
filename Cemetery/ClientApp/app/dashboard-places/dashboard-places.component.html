@@ -1,0 +1,36 @@
+<div  class="cemeterys">
+
+
+  <div class="dashboard">
+      <a *ngFor="let place of places" 
+        [class.selected]="place === selectedPlace"
+        (click)="onSelectPlace(place)"> 
+
+        <div class="el">
+
+            
+              <span class="name">{{place.number}}</span>
+
+              <span class="other top">Захороенений: {{place.burials}}</span>
+
+              <span class="other top">Статус: {{place.status}}</span>
+              <span class="other">Тип: {{place.type}}</span>
+
+              <span class="other top">Сектор: {{place.sector}}</span>
+              <span class="other">Ряд: {{place.row}}</span>
+              
+              <i class="material-icons icons">
+                  create
+                  </i>
+              <i class="material-icons icons"
+              (click)="onSelectInfo(place)">
+                info
+                </i>
+                 
+        </div>
+         
+      </a> 
+  </div>
+  
+</div>
+<app-places-details [place]="selectedInfo" [open]="open" (onClose)="onClosed($event)" ></app-places-details>

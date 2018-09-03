@@ -1,0 +1,93 @@
+<div class="background"
+[class.selected]="close === open"
+ >
+
+<div *ngIf="cemetery" class="details"
+  [class.selected]="close === open">
+
+  <div class="navigation">
+
+      <i class="material-icons" (click)="onSelectClose()">
+      clear
+      </i>
+      
+      <div class="nav1">
+        <span>Информация</span>
+      </div>
+
+      <div class="nav2" 
+        (click)="onSelectPhoto()">
+        <span >
+        Фотографии
+        </span>
+      </div>
+  <hr class="tophr"> 
+
+  </div> 
+
+  <div *ngIf="cemetery" class="dop"
+    [class.selected]="close === open">
+
+        <div class="col left names">
+          <span>Название</span>
+        </div>
+        <div class="col right top">
+          <span>{{cemetery.name}}</span>
+        </div>
+
+        <div class="col left names">
+          <span>Адресс</span>
+        </div>
+        <div class="col right top">
+          <span >{{cemetery.address}}</span>
+        </div>
+        
+        <hr class="mt8">
+
+        <div class="col left">
+          <span>Количество секторов</span>
+        </div>
+        <div class="col right">
+          <span>{{cemetery.sectors}}</span>
+        </div>
+          
+        <div class="col left">
+          <span>Количество мест</span>
+        </div>
+        <div class="col right">
+          <span>{{cemetery.places}}</span>
+        </div>
+          
+        <hr class="mt8">
+
+        <div class="col left">
+          <span>Количество захоронений</span>
+        </div>
+        <div class="col right">
+          <span>{{cemetery.burials}}</span>
+        </div>
+
+        <div class="col left">
+          <span>Количество неидентифицируемых</span>
+        </div>
+        <div class="col right">
+          <span>{{cemetery.unidentifiable}}</span>
+        </div>
+          
+        <hr class="mt8">
+
+        <div class="col left">
+          <span>Площадь</span>
+        </div>
+        <div class="col right">
+          <span>{{cemetery.area}}</span>
+        </div>
+        
+        <span class="show">ПОКАЗАТЬ НА КАРТЕ</span>
+  
+    </div>
+  </div>
+
+</div>
+
+<app-cemetery-photo [cemetery]="cemetery" [open]="selectedPhoto" (onClose)="onClosed($event)" (onInfo)="onInfo($event)"></app-cemetery-photo>

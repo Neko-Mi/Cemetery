@@ -1,0 +1,98 @@
+import { Place } from './place';
+
+export const PLACES: Place[] = [
+    {
+        id: 10,
+        name: "10",
+        address: "перекрёсток ул. Карла Маркса и пер. 1905 года",
+        cemetery: "Воронино",
+        sector: 5,
+        places: 451,
+        burials: 5555,
+        unidentifiable: 1956,
+        area: 4.5,
+        imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+        type_place: "Родственное",
+        type_priming: "Земля",
+        status: "Хозяйственное",
+        width: 190,
+        length: 190,
+        certificate: "Нет",
+        row: 4
+    },
+    {
+        id: 11,
+        name: "11",
+        address: "перекрёсток ул. Карла Маркса и пер. 1905 года",
+        cemetery: "Воронино",
+        sector: 5,
+        places: 451,
+        burials: 5555,
+        unidentifiable: 1956,
+        area: 4.5,
+        imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+        type_place: "Родственное",         type_priming: "Земля",         status: "Хозяйственное",         width: 190,         length: 190,         certificate: "Нет",
+         
+        row: 4
+    },
+    {
+        id: 12,
+        name: "12",
+        address: "перекрёсток ул. Карла Маркса и пер. 1905 года",
+        cemetery: "Воронино",
+        sector: 5,
+        places: 451,
+        burials: 5555,
+        unidentifiable: 1956,
+        area: 4.5,
+        imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+        type_place: "Родственное",         type_priming: "Земля",         status: "Хозяйственное",         width: 190,         length: 190,         certificate: "Нет",
+         
+        row: 4
+    },
+    {
+        id: 13,
+        name: "13",
+        address: "перекрёсток ул. Карла Маркса и пер. 1905 года",
+        cemetery: "Воронино",
+        sector: 5,
+        places: 451,
+        burials: 5555,
+        unidentifiable: 1956,
+        area: 4.5,
+        imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+        type_place: "Родственное",         type_priming: "Земля",         status: "Хозяйственное",         width: 190,         length: 190,         certificate: "Нет",
+         
+        row: 4
+    },
+    {
+        id: 14,
+        name: "14",
+        address: "перекрёсток ул. Карла Маркса и пер. 1905 года",
+        cemetery: "Воронино",
+        sector: 5,
+        places: 451,
+        burials: 5555,
+        unidentifiable: 1956,
+        area: 4.5,
+        imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+        type_place: "Родственное",         type_priming: "Земля",         status: "Хозяйственное",         width: 190,         length: 190,         certificate: "Нет",
+         
+        row: 4
+    },
+    {
+        id: 15,
+        name: "15",
+        address: "перекрёсток ул. Карла Маркса и пер. 1905 года",
+        cemetery: "Воронино",
+        sector: 5,
+        places: 451,
+        burials: 5555,
+        unidentifiable: 1956,
+        area: 4.5,
+        imgs:[             "/assets/images/img.jpg",             "/assets/images/img1.jpg",             "/assets/images/img2.jpg",             "/assets/images/img3.jpg",             "/assets/images/img4.jpg",             "/assets/images/img5.jpg",             "/assets/images/img6.jpg",             "/assets/images/img7.jpg",             "/assets/images/img8.jpg",             "/assets/images/img9.jpg",             "/assets/images/img10.jpg",             "/assets/images/img11.jpg",             "/assets/images/img12.jpg",         ],
+        type_place: "Родственное",         type_priming: "Земля",         status: "Хозяйственное",         width: 190,         length: 190,         certificate: "Нет",
+         
+        row: 4
+    }
+];

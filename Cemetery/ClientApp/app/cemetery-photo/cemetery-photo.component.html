@@ -1,0 +1,57 @@
+<div class="background"
+[class.selected]="close === open">
+
+<div *ngIf="cemetery" class="details"
+  [class.selected]="close === open">
+
+  <i class="material-icons close" 
+  (click)="onSelectClose()">
+    clear
+  </i>
+
+  <div class="nav1"
+      (click)="onSelectInfo()">
+    <span>Информация</span>
+  </div>
+
+  <div class="nav2" >
+    <span >
+      Фотографии
+    </span>
+  </div>
+
+  <hr class="tophr">  
+  
+  <div class="gallery">
+
+      <div class="arrows-container"
+      (click)="onBefore()">
+        <i class="material-icons arrows arrow-before">
+          navigate_before
+        </i>
+      </div>
+      
+      <img src="{{cemetery.imgs[number]}}" class="photo" alt="">
+
+      <div class="arrows-container"
+      (click)="onNext()"
+      onkeydown="return">
+
+        <i class="material-icons arrows arrow-next">
+            navigate_next
+        </i>
+      </div>
+
+    
+      <span class="counter">{{number + 1}} / {{cemetery.imgs.length}}</span>
+
+      
+       
+  </div>
+  
+  
+
+</div>
+
+
+</div>

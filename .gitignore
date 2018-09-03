@@ -1,0 +1,7 @@
+# IDE dir
+.vs/
+
+# 
+Cemetery/[Bb]in/
+Cemetery/[Oo]bj/
+Cemetery/node_modules/
