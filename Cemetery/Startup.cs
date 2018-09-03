@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using lastCemetery3.Models;
 using Microsoft.AspNetCore.Builder;
@@ -19,7 +20,12 @@ namespace lastCemetery3
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionString = "Host = localhost; Port = 5432; Database = cemetery; Username = postgres; Password = postgres";
+            string connectionString = "";
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                connectionString = "Host = localhost; Port = 5432; Database = cemetery; Username = postgres; Password = postgres;";
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                connectionString = "Host = localhost; Port = 5432; Database = cemetery; Username = pradlol; Password = postgres;";
+
             services.AddDbContext<CemeteryContext>(options => options.UseNpgsql(connectionString));
 
             services.AddMvc();

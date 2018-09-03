@@ -1,7 +1,12 @@
 # IDE dir
 .vs/
 
-# 
+# net core compiled files
 Cemetery/[Bb]in/
 Cemetery/[Oo]bj/
+
+# angular compiled files
+Cemetery/wwwroot/dist/
+
+# packages
 Cemetery/node_modules/
