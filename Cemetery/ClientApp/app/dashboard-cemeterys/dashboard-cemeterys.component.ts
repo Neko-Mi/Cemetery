@@ -7,17 +7,18 @@ import { CemeteryService } from '../cemetery.service';
 @Component({
   selector: 'app-dashboard-cemeterys',
   templateUrl: './dashboard-cemeterys.component.html',
-    styleUrls: ['./dashboard-cemeterys.component.sass'],
-    providers: [CemeteryService]
+  styleUrls: ['./dashboard-cemeterys.component.sass'],
+  providers: [CemeteryService]
 })
 export class DashboardCemeterysComponent implements OnInit {
   
-  cemeterys: Cemetery[];
+  cemeteries: Cemetery[] = [];
+
   selectedCemetery: Cemetery;
   selectedInfo: Cemetery;
+
   open: boolean = false;
   open_change: boolean = false;
-
 
   constructor(private CemeteryService: CemeteryService) { }
 
@@ -46,7 +47,7 @@ export class DashboardCemeterysComponent implements OnInit {
 
   getCemeterys(): void {
     this.CemeteryService.getCemeterys()
-        .subscribe((data: Cemetery[]) => this.cemeterys = data);
+        .subscribe((data: Cemetery[]) => this.cemeteries = data);
   }
 
 }

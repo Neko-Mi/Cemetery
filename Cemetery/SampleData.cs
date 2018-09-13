@@ -34,7 +34,9 @@ namespace lastCemetery3
             {
                 Address = "Воронино посёлок, 1",
                 Name = "Кладбище Воронино",
-                CreateAt = DateTime.Now
+                CreateDate = DateTime.Now,
+                ChangeDate = DateTime.Now,
+                imgs = new string[] { "assets/images/img.jpg", "assets/images/img1.jpg", "assets/images/img2.jpg" }
             };
             context.Cemeteries.Add(cem);
             context.SaveChanges();
@@ -127,7 +129,7 @@ namespace lastCemetery3
                 {
                     Address = "Воронино посёлок, 1",
                     Name = "Кладбище Воронино" + c,
-                    CreateAt = DateTime.Now
+                    CreateDate = DateTime.Now
                 };
                 db.Cemeteries.Add(cem);
 

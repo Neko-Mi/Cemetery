@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
  
 import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
  
 import { Cemetery } from './cemetery';
 //import { CEMETERYS } from './mock-cemetery';
 import { MessageService } from './message.service';
  
+const httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class CemeteryService {
+
     private url = "/api/cemeteries";
 
     constructor(private messageService: MessageService,
@@ -39,7 +44,10 @@ export class CemeteryService {
         return this.http.put(this.url, cem);
     }
 
-    deleteCemetery(id: number) {
-        return this.http.delete(this.url + '/' + id);
+    deleteCemetery(cemetery: Cemetery | number) {
+        const id = typeof cemetery === 'number' ? cemetery : cemetery.id;
+        // const url = '${this.cemeteriesUrl}/${id}';
+
+        return this.http.delete<Cemetery>(this.url + '/' + id);
     }
 }

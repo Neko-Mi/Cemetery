@@ -1,7 +1,7 @@
 <div  class="cemeterys">
   
   <div class="dashboard">
-      <a *ngFor="let cemetery of cemeterys" 
+      <a *ngFor="let cemetery of cemeteries" 
         [class.selected]="cemetery === selectedCemetery"
         (click)="onSelectCemetery(cemetery)"> 
 

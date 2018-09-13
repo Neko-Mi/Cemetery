@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using lastCemetery3.Models;
@@ -28,25 +29,27 @@ namespace lastCemetery3
         public IActionResult GetCemetery(int id)
         {
             var Cemetery = db.Cemeteries.Find(id);
-            // допиши этот кусок со всеми
-            // инклудами
-            // выборкой по странице
-            // дополнительные фильтры мб?
 
             return new JsonResult(Cemetery);
         }
 
         // api/Cemeteries
-        // create new Cemetery(aka burial)
+        // create new Cemetery
         [HttpPost]
-        public IActionResult CreateCemetery([FromBody]Cemetery Cemetery)
+        public IActionResult CreateCemetery([FromForm]Cemetery Cemetery)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             db.Cemeteries.Add(Cemetery);
             db.SaveChanges();
 
             return Ok(Cemetery);
         }
 
+        // 
         [HttpPut]
         public IActionResult UpdateCemetery([FromBody]Cemetery Cemetery)
         {
@@ -62,6 +65,7 @@ namespace lastCemetery3
                 return NotFound(Cemetery);
             }
 
+            Cemetery.ChangeDate = DateTime.Now;
             db.Cemeteries.Update(Cemetery);
             db.SaveChanges();
 
@@ -80,7 +84,7 @@ namespace lastCemetery3
             db.Cemeteries.Remove(Cemetery);
             db.SaveChanges();
 
-            return Ok(id);
+            return Ok(Cemetery);
         }
     }
 }

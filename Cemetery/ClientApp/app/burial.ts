@@ -12,11 +12,11 @@ export class Burial {
     //area?: number;
     imgs?: string[];
     status?: string;
-    burialtype: string;
+    burialType: string;
     
-    deathdate?: Date;
-    birthdate?: Date;
-    burialdate?: Date; 
+    deathDate?: Date;
+    birthDate?: Date;
+    burialDate?: Date; 
 
     deathcertificate?: string;
     registrationAddress?: string;

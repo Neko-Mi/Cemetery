@@ -1,5 +1,6 @@
 # IDE dir
 .vs/
+.vscode/
 
 # net core compiled files
 Cemetery/[Bb]in/
@@ -10,3 +11,7 @@ Cemetery/wwwroot/dist/
 
 # packages
 Cemetery/node_modules/
+
+# wtf-files
+*.js
+*.map

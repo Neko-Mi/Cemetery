@@ -1,1 +1,0 @@
-{"version":3,"file":"mock-user.js","sourceRoot":"","sources":["mock-user.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,IAAM,KAAK,GAAW;IAC3B;QACE,EAAE,EAAE,EAAE;QACN,IAAI,EAAE,YAAY;QAClB,OAAO,EAAE,qBAAqB;QAC9B,UAAU,EAAE,gBAAgB;QAC5B,KAAK,EAAE,yBAAyB;QAChC,KAAK,EAAE,gCAAgC;QACvC,MAAM,EAAE,oBAAoB;KAC3B;CACJ,CAAC"}
