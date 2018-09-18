@@ -9,10 +9,11 @@ namespace lastCemetery3.Models
     {
         public int Id { get; set; }
         public string SectorName { get; set; }        
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime ChangeDate { get; set; }
 
         // foreign key
-        [JsonIgnore]
+        // [JsonIgnore]
         public int CemeteryId { get; set; }
         //[JsonIgnore]
         public Cemetery Cemetery { get; set; }

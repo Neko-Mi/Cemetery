@@ -44,7 +44,8 @@ namespace lastCemetery3
             var sector = new Sector
             {
                 SectorName = "35",
-                CreatedAt = DateTime.Now,
+                CreatedDate = DateTime.Now,
+                ChangeDate = DateTime.Now,
                 Cemetery = cem
             };
             context.Sectors.Add(sector);
@@ -138,7 +139,8 @@ namespace lastCemetery3
                     var sect = new Sector
                     {
                         SectorName = $"{s}",
-                        CreatedAt = DateTime.Now,
+                        CreatedDate = DateTime.Now,
+                        ChangeDate = DateTime.Now,
                         Cemetery = cem
                     };
                     db.Sectors.Add(sect);
