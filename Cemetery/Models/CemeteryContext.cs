@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace lastCemetery3.Models
+namespace CemeteryApp.Models
 {
     public class CemeteryContext : DbContext
     {

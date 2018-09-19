@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace lastCemetery3.Models
+namespace CemeteryApp.Models
 {
     public class Relative
     {

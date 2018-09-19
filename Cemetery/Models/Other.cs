@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace lastCemetery3.Models
+namespace CemeteryApp.Models
 {
     public class Other
     {

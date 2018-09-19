@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using lastCemetery3.Models;
+using CemeteryApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace lastCemetery3
+namespace CemeteryApp
 {
     [Route("api/[controller]")]
     public class CemeteriesController : Controller
@@ -18,7 +18,7 @@ namespace lastCemetery3
         // api/Cemeteries
         // return all Cemeteriess
         [HttpGet]
-        public IEnumerable<Models.Cemetery> GetAll()
+        public IEnumerable<Cemetery> GetAll()
         {
             return db.Cemeteries.ToList();
         }
@@ -36,7 +36,7 @@ namespace lastCemetery3
         // api/Cemeteries
         // create new Cemetery
         [HttpPost]
-        public IActionResult CreateCemetery([FromForm]Models.Cemetery Cemetery)
+        public IActionResult CreateCemetery([FromForm]Cemetery Cemetery)
         {
             if (!ModelState.IsValid)
             {
@@ -51,7 +51,7 @@ namespace lastCemetery3
 
         // 
         [HttpPut]
-        public IActionResult UpdateCemetery([FromBody]Models.Cemetery Cemetery)
+        public IActionResult UpdateCemetery([FromBody]Cemetery Cemetery)
         {
             // validation
             if (!ModelState.IsValid)

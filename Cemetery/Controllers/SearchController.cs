@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using lastCemetery3.Models;
+using CemeteryApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Cemetery.Controllers
+namespace CemeteryApp.Controllers
 {
     //[Route("api/[controller]")]
     [Route("[controller]")]

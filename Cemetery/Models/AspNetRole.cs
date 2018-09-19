@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace lastCemetery3.Models
+namespace CemeteryApp.Models
 {
     public class AspNetRole
     {
