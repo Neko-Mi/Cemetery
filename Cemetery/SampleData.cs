@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using lastCemetery3.Models;
+using CemeteryApp.Models;
 using System.IO;
 using System;
 
-namespace lastCemetery3
+namespace CemeteryApp
 {
     public static class SampleData
     {
@@ -130,7 +130,8 @@ namespace lastCemetery3
                 {
                     Address = "Воронино посёлок, 1",
                     Name = "Кладбище Воронино" + c,
-                    CreateDate = DateTime.Now
+                    CreateDate = DateTime.Now,
+                    ChangeDate = DateTime.Now
                 };
                 db.Cemeteries.Add(cem);
 

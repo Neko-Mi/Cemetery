@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace lastCemetery3.Models
+namespace CemeteryApp.Models
 {
     public class Sector
     {

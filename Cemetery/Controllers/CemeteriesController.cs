@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using lastCemetery3.Models;
+using CemeteryApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace lastCemetery3
+namespace CemeteryApp
 {
     [Route("api/[controller]")]
     public class CemeteriesController : Controller
