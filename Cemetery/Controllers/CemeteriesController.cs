@@ -18,7 +18,7 @@ namespace lastCemetery3
         // api/Cemeteries
         // return all Cemeteriess
         [HttpGet]
-        public IEnumerable<Cemetery> GetAll()
+        public IEnumerable<Models.Cemetery> GetAll()
         {
             return db.Cemeteries.ToList();
         }
@@ -36,7 +36,7 @@ namespace lastCemetery3
         // api/Cemeteries
         // create new Cemetery
         [HttpPost]
-        public IActionResult CreateCemetery([FromForm]Cemetery Cemetery)
+        public IActionResult CreateCemetery([FromForm]Models.Cemetery Cemetery)
         {
             if (!ModelState.IsValid)
             {
@@ -51,7 +51,7 @@ namespace lastCemetery3
 
         // 
         [HttpPut]
-        public IActionResult UpdateCemetery([FromBody]Cemetery Cemetery)
+        public IActionResult UpdateCemetery([FromBody]Models.Cemetery Cemetery)
         {
             // validation
             if (!ModelState.IsValid)

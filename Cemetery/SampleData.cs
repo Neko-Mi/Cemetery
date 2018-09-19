@@ -30,7 +30,7 @@ namespace lastCemetery3
             context.Users.Add(user);
             context.SaveChanges();
 
-            var cem = new Cemetery
+            var cem = new Models.Cemetery
             {
                 Address = "Воронино посёлок, 1",
                 Name = "Кладбище Воронино",
@@ -125,7 +125,7 @@ namespace lastCemetery3
 
             for (int c = 1; c <= 10; c++)
             {
-                var cem = new Cemetery
+                var cem = new Models.Cemetery
                 {
                     Address = "Воронино посёлок, 1",
                     Name = "Кладбище Воронино" + c,
