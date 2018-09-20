@@ -11,6 +11,7 @@ namespace CemeteryApp.Models
         public string SectorName { get; set; }        
         public DateTime CreatedDate { get; set; }
         public DateTime ChangeDate { get; set; }
+        public string[] Imgs { get; set; }
 
         // foreign key
         // [JsonIgnore]

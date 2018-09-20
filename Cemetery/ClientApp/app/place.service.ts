@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
  
 import { Place } from './place';
-import { PLACES } from './mock-place';
+//import { PLACES } from './mock-place';
 import { MessageService } from './message.service';
  
 

@@ -34,6 +34,7 @@ export class SectorService {
   }
 
   updateSector(sector: Sector) {
+      console.log(sector);
     return this.http.put(this.url, sector);
   }
 

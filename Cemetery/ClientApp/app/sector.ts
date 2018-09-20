@@ -2,8 +2,7 @@ import { Cemetery } from "./cemetery";
 
 export class Sector {
     id: number;
-    name: string;
-    address: string;
+    sectorName: string;
     createdDate: Date;
     changeDate: Date;
     cemetery: Cemetery;

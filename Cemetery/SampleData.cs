@@ -46,7 +46,8 @@ namespace CemeteryApp
                 SectorName = "35",
                 CreatedDate = DateTime.Now,
                 ChangeDate = DateTime.Now,
-                Cemetery = cem
+                Cemetery = cem,
+                Imgs = new string[] { "assets/images/img.jpg", "assets/images/img1.jpg", "assets/images/img2.jpg" }
             };
             context.Sectors.Add(sector);
             context.SaveChanges();

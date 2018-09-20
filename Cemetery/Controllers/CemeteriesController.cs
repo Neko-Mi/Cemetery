@@ -36,7 +36,7 @@ namespace CemeteryApp
         // api/Cemeteries
         // create new Cemetery
         [HttpPost]
-        public IActionResult CreateCemetery([FromForm]Cemetery Cemetery)
+        public IActionResult CreateCemetery([FromBody]Cemetery Cemetery)
         {
             if (!ModelState.IsValid)
             {
