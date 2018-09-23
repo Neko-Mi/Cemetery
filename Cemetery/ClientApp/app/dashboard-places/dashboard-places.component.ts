@@ -15,7 +15,9 @@ export class DashboardPlacesComponent implements OnInit {
 
   selectedPlace: Place;
   selectedInfo: Place;
+
   open: boolean = false;
+  open_change: boolean = false;
 
   constructor(private PlaceService: PlaceService) { }
 
@@ -32,8 +34,14 @@ export class DashboardPlacesComponent implements OnInit {
     this.open = !this.open;
   }
 
+  onSelectChange(place: Place): void {
+    this.selectedInfo = place;
+    this.open_change = !this.open_change;
+  }
+
   onClosed(closed:any) {
       closed == false ? this.open = false : this.open = true;
+      closed == false ? this.open_change = false : this.open_change = true;
   }
 
   getPlaces(): void {

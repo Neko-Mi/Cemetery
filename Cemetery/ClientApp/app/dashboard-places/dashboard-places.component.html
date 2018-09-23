@@ -19,7 +19,8 @@
               <span class="other top">Сектор: {{place.sector}}</span>
               <span class="other">Ряд: {{place.row}}</span>
               
-              <i class="material-icons icons">
+              <i class="material-icons icons"
+              (click)="onSelectChange(place)">
                   create
                   </i>
               <i class="material-icons icons"
@@ -34,3 +35,4 @@
   
 </div>
 <app-places-details [place]="selectedInfo" [open]="open" (onClose)="onClosed($event)" ></app-places-details>
+<app-change-place [place]="selectedInfo" [open]="open_change" (onClose)="onClosed($event)"></app-change-place>

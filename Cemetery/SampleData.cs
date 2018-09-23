@@ -56,9 +56,14 @@ namespace CemeteryApp
             {
                 var place = new Place
                 {
-                    CreatedAt = DateTime.Now,
+                    CreatedDate = DateTime.Now,
+                    ChangedDate = DateTime.Now,
                     Sector = sector,
-                    Number = i
+                    Number = i,
+                    Status = "вменяемое",
+                    PlaceType = "хозяйственное",
+                    SoilType = "глина твёрдая",
+                    Imgs = new string[] {"assets/images/img.jpg", "assets/images/img1.jpg", "assets/images/img2.jpg" }
                 };
 
                 context.Places.Add(place);
@@ -151,7 +156,8 @@ namespace CemeteryApp
                     {
                         var place = new Place
                         {
-                            CreatedAt = DateTime.Now,
+                            CreatedDate = DateTime.Now,
+                            ChangedDate = DateTime.Now,
                             Sector = sect,
                             Number = p
                         };

@@ -25,42 +25,42 @@
           <span>Номер</span>
         </div>
         <div class="col right">
-          <span>{{place.name}}</span>
+          <span>{{place.number}}</span>
         </div>
 
-        <div class="col left names">
-          <span>Сетор</span>
+        <!-- <div class="col left names">
+          <span>Сектор</span>
         </div>
         <div class="col right">
           <span >{{place.sector}}</span>
-        </div>
+        </div> -->
 
-        <div class="col left names">
+        <!-- <div class="col left names">
           <span>Ряд</span>
         </div>
         <div class="col right">
           <span >{{place.row}}</span>
         </div>
         
-        <hr class="mt8">
+        <hr class="mt8"> -->
 
          
 
-        <div class="col left">
+        <!-- <div class="col left">
           <span>Количество захоронений</span>
         </div>
         <div class="col right">
           <span>{{place.burials}}</span>
-        </div>
+        </div> -->
 
         <hr class="mt8">
 
-        <div class="col left top">
+        <!-- <div class="col left top">
           <span>Выдавалось удостоверение на захоронение</span>
         </div>
         <div class="col right top names">
           <span>{{place.certificate}}</span>
-        </div>
+        </div> -->
 
         <hr class="mt8">
 
@@ -75,14 +75,14 @@
           <span>Тип места</span>
         </div>
         <div class="col right">
-          <span>{{place.type_place}}</span>
+          <span>{{place.placeType}}</span>
         </div>
 
         <div class="col left">
           <span>Тип грунта</span>
         </div>
         <div class="col right">
-          <span>{{place.type_priming}}</span>
+          <span>{{place.soilType}}</span>
         </div>
 
         <hr class="mt8">
@@ -98,14 +98,14 @@
           <span>Длина</span>
         </div>
         <div class="col right">
-          <span>{{place.length}}</span>
+          <span>{{place.height}}</span>
         </div>
 
         <div class="col left">
           <span>Площадь</span>
         </div>
         <div class="col right">
-          <span>{{place.area}}</span>
+          <span>{{place.height * place.width}}</span>
         </div>
         
         <span class="show">ПОКАЗАТЬ НА КАРТЕ</span>

@@ -34,11 +34,10 @@ export class SectorService {
   }
 
   updateSector(sector: Sector) {
-      console.log(sector);
     return this.http.put(this.url, sector);
   }
 
-  deleteSector(sector: Sector) {
+  deleteSector(sector: Sector | number) {
     const id = typeof sector === 'number' ? sector : sector.id;
 
     return this.http.delete<Sector>(this.url + '/' + id);

@@ -1,19 +1,29 @@
+import { Sector } from "./sector";
+
 export class Place {
     id: number;
-    name: string;
-    address: string;
-    cemetery: string;
-    sector: number;
-    places: number;
-    burials: number;
-    unidentifiable: number;
-    area: number;
-    imgs: string[];
-    status: string;
-    type_place: string;
-    type_priming: string;
     row: number;
-    certificate: string;
+    number: number;
+    // address: string;
+    // cemetery: string;
+    // sector: number;
+    // places: number;
+    // burials: number;
+    // unidentifiable: number;
+    // area: number;
+    status: string;
+    placeType: string;
+    soilType: string;
+    // type_priming: string;
+    // certificate: string;
     width: number;
-    length: number;
+    height: number;
+    imgs: string[];
+
+    createdDate: Date;
+    changedDate: Date;
+
+    // 
+    sectorId: number;
+    sector: Sector;    
 }
