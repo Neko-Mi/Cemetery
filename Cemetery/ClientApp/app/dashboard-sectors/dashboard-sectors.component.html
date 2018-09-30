@@ -13,7 +13,8 @@
               <span class="other">Мест: {{sector.places}}</span>
               <span class="other">Захоронений: {{sector.burials}}</span>
               
-              <i class="material-icons icons">
+              <i class="material-icons icons"
+              (click)="onSelectChange(sector)">
                   create
                   </i>
               <i class="material-icons icons"
@@ -28,3 +29,4 @@
   
 </div>
 <app-sectors-details [sector]="selectedInfo" [open]="open" (onClose)="onClosed($event)" ></app-sectors-details>
+<app-change-sector [sector]="selectedInfo" [open]="open_change" (onClose)="onClosed($event)"></app-change-sector>

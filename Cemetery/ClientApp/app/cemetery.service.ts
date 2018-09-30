@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
  
 import { Cemetery } from './cemetery';
-//import { CEMETERYS } from './mock-cemetery';
 import { MessageService } from './message.service';
  
 const httpOptions = {

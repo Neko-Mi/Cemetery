@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
  
 import { Place } from './place';
-import { PLACES } from './mock-place';
+//import { PLACES } from './mock-place';
 import { MessageService } from './message.service';
  
 
@@ -30,4 +30,18 @@ export class PlaceService {
   //  //this.messageService.add2(`PlaceService: fetched Place id=${id}`);
   //  return of(PLACES.find(place => place.id === id));
   //}
+    
+    createPlace(place: Place) {
+        return this.http.post(this.url, place);
+    }
+
+    updatePlace(place: Place) {
+        return this.http.put(this.url, place);
+    }
+
+    deletePlace(place: Place | number) {
+        const id = typeof place === 'number' ? place : place.id;
+
+        return this.http.delete<Place>(this.url + '/' + id);
+    }
 }

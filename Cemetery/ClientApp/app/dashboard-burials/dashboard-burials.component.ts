@@ -4,42 +4,49 @@ import { Burial } from '../burial';
 import { BurialService } from '../burial.service';
 
 @Component({
-  selector: 'app-dashboard-burials',
-  templateUrl: './dashboard-burials.component.html',
-  styleUrls: ['./dashboard-burials.component.sass'],
-  providers: [BurialService]
+    selector: 'app-dashboard-burials',
+    templateUrl: './dashboard-burials.component.html',
+    styleUrls: ['./dashboard-burials.component.sass'],
+    providers: [BurialService]
 })
 export class DashboardBurialsComponent implements OnInit {
-  
-  burials: Burial[];
 
-  selectedBurial: Burial;
-  selectedInfo: Burial;
-  open: boolean = false;
+    burials: Burial[];
 
+    selectedBurial: Burial;
+    selectedInfo: Burial;
 
-  constructor(private burialService: BurialService) { }
+    open: boolean = false;
+    open_change: boolean = false;
 
-  ngOnInit() {
-    this.getBurials();
-  }
+    constructor(private burialService: BurialService) { }
 
-  onSelectBurial(burial: Burial): void {
-    this.selectedBurial = burial;
-  }
+    ngOnInit() {
+        this.getBurials();
+    }
 
-  onSelectInfo(burial: Burial): void {
-    this.selectedInfo = burial;
-    this.open = !this.open;
-  }
+    onSelectBurial(burial: Burial): void {
+        this.selectedBurial = burial;
+    }
 
-  onClosed(closed:any) {
-      closed == false ? this.open = false : this.open = true;
-  }
+    onSelectInfo(burial: Burial): void {
+        this.selectedInfo = burial;
+        this.open = !this.open;
+    }
 
-  getBurials(): void {
-    this.burialService.getBurials()
-        .subscribe((data: Burial[]) => this.burials = data);
-  }
+    onSelectChange(burial: Burial): void {
+        this.selectedInfo = burial;
+        this.open_change = !this.open_change;
+    }
+
+    onClosed(closed: any) {
+        closed == false ? this.open = false : this.open = true;
+        closed == false ? this.open_change = false : this.open_change = true;
+    }
+
+    getBurials(): void {
+        this.burialService.getBurials()
+            .subscribe((data: Burial[]) => this.burials = data);
+    }
 
 }

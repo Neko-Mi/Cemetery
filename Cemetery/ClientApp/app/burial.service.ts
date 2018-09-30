@@ -37,7 +37,8 @@ export class BurialService {
     return this.http.put(this.url, person);
   }
 
-  deleteBurial(id: number) {
+  deleteBurial(burial: Burial | number) {
+    const id = typeof burial === 'number' ? burial : burial.id;
     return this.http.delete(this.url + '/' + id);
   } 
 

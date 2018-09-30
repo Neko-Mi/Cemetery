@@ -12,7 +12,7 @@ namespace CemeteryApp.Models
         public string RegistrationAddress { get; set; }
         public int ArchivedNumber { get; set; }
         public string CremationPlace { get; set; }
-        public string GraveDepth { get; set; }
+        public double GraveDepth { get; set; }
         public string DitcherSurname { get; set; }
         public string SoilType { get; set; }
 

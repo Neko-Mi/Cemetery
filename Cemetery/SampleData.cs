@@ -44,8 +44,10 @@ namespace CemeteryApp
             var sector = new Sector
             {
                 SectorName = "35",
-                CreatedAt = DateTime.Now,
-                Cemetery = cem
+                CreateDate = DateTime.Now,
+                ChangeDate = DateTime.Now,
+                Cemetery = cem,
+                Imgs = new string[] { "assets/images/img.jpg", "assets/images/img1.jpg", "assets/images/img2.jpg" }
             };
             context.Sectors.Add(sector);
             context.SaveChanges();
@@ -54,9 +56,14 @@ namespace CemeteryApp
             {
                 var place = new Place
                 {
-                    CreatedAt = DateTime.Now,
+                    CreateDate = DateTime.Now,
+                    ChangeDate = DateTime.Now,
                     Sector = sector,
-                    Number = i
+                    Number = i,
+                    Status = "вменяемое",
+                    PlaceType = "хозяйственное",
+                    SoilType = "глина твёрдая",
+                    Imgs = new string[] {"assets/images/img.jpg", "assets/images/img1.jpg", "assets/images/img2.jpg" }
                 };
 
                 context.Places.Add(place);
@@ -85,16 +92,16 @@ namespace CemeteryApp
 
                 var burial = new Burial
                 {
-                    FullName = data[1] + " " + data[2] + " " + data[3],
+                    // FullName = data[1] + " " + data[2] + " " + data[3],
+                    Surname = data[1],
+                    Name = data[2],
+                    Patronymic = data[3],
                     DeathDate = dd,
                     BirthDate = bd,
                     BurialDate = bd,
-                    CreatedAt = DateTime.Now,
+                    CreateDate = DateTime.Now,
                     FuneralUrn = "нет",
                     Place = context.Places.FirstOrDefault(p => p.Number == int.Parse(data[0])),
-                    DeathCertificate = "СВ-123456",
-                    ArchivedNumber = (new Random()).Next(10000),
-                    BurialType = "нормальное",
                     imgs = new string[] {"assets/images/img.jpg", "assets/images/img1.jpg", "assets/images/img2.jpg" }
                 };
                 context.Burials.Add(burial);
@@ -102,10 +109,12 @@ namespace CemeteryApp
                 var other = new Other()
                 {
                     PersonKey = burial.Id,
-                    GraveDepth = "2m",
+                    GraveDepth = 2.123,
                     DateOfReference = bd,
                     RegistrationAddress = "Томский ЗАГС",
                     SoilType = "хорошее",
+                    CertificateNumber = "СВ-123456",
+                    ArchivedNumber = (new Random()).Next(10000),
 
                 };
                 context.Others.Add(other);
@@ -116,67 +125,69 @@ namespace CemeteryApp
             context.SaveChanges();
         }
 
-        public static void TestData(CemeteryContext db)
-        {
-            if (db.Cemeteries.Any())
-            {
-                return;
-            }
+        // public static void TestData(CemeteryContext db)
+        // {
+        //     if (db.Cemeteries.Any())
+        //     {
+        //         return;
+        //     }
 
-            for (int c = 1; c <= 10; c++)
-            {
-                var cem = new Cemetery
-                {
-                    Address = "Воронино посёлок, 1",
-                    Name = "Кладбище Воронино" + c,
-                    CreateDate = DateTime.Now,
-                    ChangeDate = DateTime.Now
-                };
-                db.Cemeteries.Add(cem);
+        //     for (int c = 1; c <= 10; c++)
+        //     {
+        //         var cem = new Cemetery
+        //         {
+        //             Address = "Воронино посёлок, 1",
+        //             Name = "Кладбище Воронино" + c,
+        //             CreateDate = DateTime.Now,
+        //             ChangeDate = DateTime.Now
+        //         };
+        //         db.Cemeteries.Add(cem);
 
-                for (int s = 1; s <= 40; s++)
-                {
-                    var sect = new Sector
-                    {
-                        SectorName = $"{s}",
-                        CreatedAt = DateTime.Now,
-                        Cemetery = cem
-                    };
-                    db.Sectors.Add(sect);
+        //         for (int s = 1; s <= 40; s++)
+        //         {
+        //             var sect = new Sector
+        //             {
+        //                 SectorName = $"{s}",
+        //                 CreatedDate = DateTime.Now,
+        //                 ChangeDate = DateTime.Now,
+        //                 Cemetery = cem
+        //             };
+        //             db.Sectors.Add(sect);
 
-                    for (int p = 1; p <= 125; p++)
-                    {
-                        var place = new Place
-                        {
-                            CreatedAt = DateTime.Now,
-                            Sector = sect,
-                            Number = p
-                        };
-                        db.Places.Add(place);
+        //             for (int p = 1; p <= 125; p++)
+        //             {
+        //                 var place = new Place
+        //                 {
+        //                     CreatedDate = DateTime.Now,
+        //                     ChangedDate = DateTime.Now,
+        //                     Sector = sect,
+        //                     Number = p
+        //                 };
+        //                 db.Places.Add(place);
 
-                        var pers1 = new Burial
-                        {
-                            FullName = "Иванов Иван Иванович",
-                            DeathDate = DateTime.Now,
-                            BirthDate = new DateTime(1980, 10, 13),
-                            CreatedAt = DateTime.Now,
-                            FuneralUrn = "нет",
-                            Place = place
-                        };
-                        var pers2 = new Burial
-                        {
-                            FullName = "Иванова Ивна Ивановна",
-                            DeathDate = DateTime.Now,
-                            BirthDate = new DateTime(1980, 10, 13),
-                            CreatedAt = DateTime.Now,
-                            FuneralUrn = "нет",
-                            Place = place
-                        };
-                        db.Burials.AddRange(new [] { pers1, pers2 });
-                    }
-                }
-            }
-            db.SaveChanges();
-        }
+        //                 var pers1 = new Burial
+        //                 {
+        //                     FullName = "Иванов Иван Иванович",
+        //                     DeathDate = DateTime.Now,
+        //                     BirthDate = new DateTime(1980, 10, 13),
+        //                     CreatedAt = DateTime.Now,
+        //                     FuneralUrn = "нет",
+        //                     Place = place
+        //                 };
+        //                 var pers2 = new Burial
+        //                 {
+        //                     FullName = "Иванова Ивна Ивановна",
+        //                     DeathDate = DateTime.Now,
+        //                     BirthDate = new DateTime(1980, 10, 13),
+        //                     CreatedAt = DateTime.Now,
+        //                     FuneralUrn = "нет",
+        //                     Place = place
+        //                 };
+        //                 db.Burials.AddRange(new [] { pers1, pers2 });
+        //             }
+        //         }
+        //     }
+        //     db.SaveChanges();
+        // }
     }
 }

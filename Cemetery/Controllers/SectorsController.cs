@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using CemeteryApp.Models;
@@ -41,6 +42,11 @@ namespace CemeteryApp
         [HttpPost]
         public IActionResult CreateSector([FromBody]Sector Sector)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             db.Sectors.Add(Sector);
             db.SaveChanges();
 
@@ -59,9 +65,10 @@ namespace CemeteryApp
             // check existing
             if (!db.Sectors.Any(pers => pers.Id == Sector.Id))
             {
-                return NotFound(Sector);
+                return NotFound(Sector.Id);
             }
 
+            Sector.ChangeDate = DateTime.Now;
             db.Sectors.Update(Sector);
             db.SaveChanges();
 

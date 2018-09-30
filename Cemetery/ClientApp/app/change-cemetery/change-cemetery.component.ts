@@ -41,7 +41,6 @@ export class ChangeCemeteryComponent implements OnInit {
   }
 
   saveChanges(cemetery: Cemetery) {
-    console.log(cemetery.id + " " + cemetery.name + " " + cemetery.address);
     this.cemeteryService.updateCemetery(cemetery)
       .subscribe(
         (data: Cemetery) => { this.cemetery = data; this.done = true; },

@@ -9,10 +9,12 @@ namespace CemeteryApp.Models
     {
         public int Id { get; set; }
         public string SectorName { get; set; }        
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime ChangeDate { get; set; }
+        public string[] Imgs { get; set; }
 
         // foreign key
-        [JsonIgnore]
+        // [JsonIgnore]
         public int CemeteryId { get; set; }
         //[JsonIgnore]
         public Cemetery Cemetery { get; set; }

@@ -1,3 +1,229 @@
-<p>
-  change-burial works!
-</p>
+<div class="background"
+[class.selected]="close === open"
+ >
+
+<div *ngIf="burial" class="details"
+  [class.selected]="close === open"
+  [class.withPhoto]="selectedPhoto !== PhotoOpen">
+
+      <i class="material-icons" (click)="onSelectClose()">
+      clear
+      </i>
+
+
+  <div *ngIf="burial" class="dop"
+    [class.selected]="close === open">
+
+        <div class="col left names top">
+          <span>ФИО</span>
+        </div>
+        <div class="col right top">
+              <input [(ngModel)]="burial.name" placeholder="{{burial.name}}"/>
+        </div>
+
+        
+        <div class="col left names">
+            <span>Дата смерти</span>
+          </div>
+          <div class="col right small date">
+            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          </div>
+
+        <div class="col left names">
+          <span>Дата захоронения</span>
+        </div>
+        <div class="col right small date">
+          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+        </div>
+
+        <div class="col left names">
+          <span>Дата рождения</span>
+        </div>
+        <div class="col right small date">
+          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+        </div>
+
+
+        <hr class="mt8">
+
+
+        <div class="col left names">
+            <span>Номер св-ва о смерти</span>
+        </div>
+        <div class="col right">
+              <input [(ngModel)]="burial.number_death" placeholder="{{burial.number_death}}"/>
+        </div>
+
+        <div class="col left names">
+            <span>Загс выд. св-во о смерти</span>
+        </div>
+        <div class="col right">
+              <input [(ngModel)]="burial.zags" placeholder="{{burial.zags}}"/>
+        </div>
+
+        <div class="col left names">
+            <span>Дата выд. св-ва о смерти</span>
+          </div>
+          <div class="col right small date">
+            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          </div>
+
+        <div class="col left names">
+            <span>Номер в арх. книге</span>
+        </div>
+        <div class="col right">
+              <input [(ngModel)]="burial.number_book" placeholder="{{burial.number_book}}"/>
+        </div>
+
+        <hr class="mt8">
+
+
+        <div class="col left names">
+            <span>ФИО ответственного</span>
+        </div>
+        <div class="col right">
+              <input [(ngModel)]="burial.name_s" placeholder="{{burial.name_s}}"/>
+        </div>
+        <div class="col left names">
+            <span>Адрес ответственного</span>
+        </div>
+        <div class="col right">
+              <input [(ngModel)]="burial.address_s" placeholder="{{burial.address_s}}"/>
+        </div>
+        <div class="col left names">
+            <span>Адрес регистрации</span>
+        </div>
+        <div class="col right">
+              <input [(ngModel)]="burial.address_r" placeholder="{{burial.address_r}}"/>
+        </div>
+
+
+        <hr class="mt8">
+
+
+        <div class="col left names">
+          <span>Урна с прахом</span>
+        </div>
+        <div class="col right small">
+          <input [(ngModel)]="burial.urn" placeholder="{{burial.urn}}"/>
+        </div>
+
+        <div class="col left names">
+          <span>Дата кремации</span>
+        </div>
+        <div class="col right small date">
+          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+        </div>
+
+        <div class="col left names">
+          <span>Глубина</span>
+        </div>
+        <div class="col right small">
+          <input [(ngModel)]="burial.depth" placeholder="{{burial.depth}}"/>
+        </div>
+        
+        <div class="col left names">
+          <span>Вид захоронения</span>
+        </div>
+        <div class="col right small">
+          <input [(ngModel)]="burial.sort" placeholder="{{burial.sort}}"/>
+        </div>
+
+
+        <hr class="mt8">
+
+
+        <div class="col left names">
+            <span>Кладбище</span>
+        </div>
+        <div class="col right">
+              <input [(ngModel)]="burial.cemetery" placeholder="{{burial.cemetery}}"/>
+        </div>
+
+
+        <div class="col left names">
+            <span>Номер</span>
+          </div>
+          <div class="col right small">
+            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          </div>
+      
+      
+          <div class="col left names">
+            <span>Сетор</span>
+          </div>
+          <div class="col right small">
+            <input [(ngModel)]="burial.sector" placeholder="{{burial.sector}}"/>
+          </div>
+      
+          <div class="col left names">
+            <span>Ряд</span>
+          </div>
+          <div class="col right small">
+            <input [(ngModel)]="burial.row" placeholder="{{burial.row}}"/>
+          </div>
+
+
+
+        <div [class.selectedGallery]="selectedPhoto !== PhotoOpen">
+
+            <div class="gallery"
+            [class.selectedPhoto]="selectedPhoto === PhotoOpen">
+    
+                    <div class="arrows-container"
+                    (click)="onBefore()">
+                      <i class="material-icons arrows arrow-before">
+                        navigate_before
+                      </i>
+                    </div>
+                    
+                    <img src="{{burial.imgs[number]}}" class="photo" alt="">
+              
+                    <div class="arrows-container"
+                    (click)="onNext()">
+              
+                      <i class="material-icons arrows arrow-next">
+                          navigate_next
+                      </i>
+                    </div>
+              
+                    <span class="counter">{{number + 1}} / {{burial.imgs.length}}</span>   
+
+
+                    <div class="btns">
+                      <span class=" photoAdd" (click)="addPhoto()">ДОБАВИТЬ ФОТОГРАФИЮ</span>
+                      <span class=" del" (click)="addPhoto()">УДАЛИТЬ ФОТОГРАФИЮ</span>
+                    </div>
+                    
+            </div>
+            
+          <span class="b_left add button" 
+          (click)="onSelectPhoto()"
+          [class.selectedPhoto]="selectedPhoto !== PhotoOpen">
+          ДОБАВИТЬ ФОТОГРАФИЮ
+          </span>
+
+        </div>
+        
+        <div class="buttons">
+          <span class="b_left button" (click)="delete(burial)">УДАЛИТЬ</span>
+          <span class="b_right button change" (click)="saveChange(burial)">ИЗМЕНИТЬ</span>
+          <span class="b_right button" (click)="onSelectClose()">ОТМЕНИТЬ</span>
+        </div>
+
+        
+        
+  
+    </div>
+  </div>
+</div>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Sector } from '../sector';
 import { SectorService } from '../sector.service';
-//import { selectedMenu } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-dashboard-sectors',
@@ -12,33 +11,41 @@ import { SectorService } from '../sector.service';
 })
 export class DashboardSectorsComponent implements OnInit {
 
-  sectors: Sector[];
+    sectors: Sector[];
 
-  selectedSector: Sector;
-  selectedInfo: Sector;
-  open: boolean = false;
+    selectedSector: Sector;
+    selectedInfo: Sector;
 
-  constructor(private SectorService: SectorService) { }
+    open: boolean = false;
+    open_change: boolean = false;
 
-  ngOnInit() {
-    this.getSectors();
-  }
-  
-  onSelectSector(sector: Sector): void {
-    this.selectedSector = sector;
-  }
+    constructor(private SectorService: SectorService) { }
 
-  onSelectInfo(sector: Sector): void {
-    this.selectedInfo = sector;
-    this.open = !this.open;
-  }
+    ngOnInit() {
+        this.getSectors();
+    }
+    
+    onSelectSector(sector: Sector): void {
+        this.selectedSector = sector;
+    }
 
-  onClosed(closed:any) {
-    closed == false ? this.open = false : this.open = true;
-  }
+    onSelectInfo(sector: Sector): void {
+        this.selectedInfo = sector;
+        this.open = !this.open;
+    }
 
-  getSectors(): void {
-    this.SectorService.getSectors()
-        .subscribe((data: Sector[]) => this.sectors = data);
-  }
+    onSelectChange(sector: Sector): void {
+        this.selectedInfo = sector;
+        this.open_change = !this.open_change;
+    }
+
+    onClosed(closed:any) {
+        closed == false ? this.open = false : this.open = true;
+        closed == false ? this.open_change = false : this.open_change = true;
+    }
+
+    getSectors(): void {
+        this.SectorService.getSectors()
+            .subscribe((data: Sector[]) => this.sectors = data);
+    }
 }
