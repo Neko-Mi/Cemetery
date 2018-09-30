@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CemeteryApp.Controllers
 {
     //[Route("api/[controller]")]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class SearchController : ControllerBase
     {
@@ -23,7 +23,7 @@ namespace CemeteryApp.Controllers
         // search
         // .../
         [HttpGet("{part}")]
-        public IEnumerable<Burial> LookFor(string part)
+        public IEnumerable<Burial> Burial(string part)
         {
             var burials = db.Burials
                 .Where(b => b.Surname.ToLower().Contains(part.ToLower())
@@ -35,5 +35,31 @@ namespace CemeteryApp.Controllers
             return burials;
         }
 
+        [HttpGet("{part}")]
+        public IEnumerable<Place> Place(string part)
+        {
+            var places = db.Places
+                .Where(place => place.Number.ToString().Contains(part.ToLower()));
+
+            return places.ToList();
+        }
+
+        [HttpGet("{part}")]
+        public IEnumerable<Sector> Sector(string part)
+        {
+            var sectors = db.Sectors
+                .Where(sect => sect.SectorName.ToLower().Contains(part.ToLower()));
+
+            return sectors.ToList();
+        }
+
+        [HttpGet("{part}")]
+        public IEnumerable<Cemetery> Cemetery(string part)
+        {
+            var cemeteries = db.Cemeteries
+                .Where(cem => cem.Name.ToLower().Contains(part.ToLower()));
+
+            return cemeteries.ToList();
+        }
     }
 }
