@@ -1,8 +1,35 @@
 import { Place } from "./place";
 
 export class Burial {
+    // burial info
     id?: number;
-    fullName?: string;
+    surname?: string;
+    name?: string;
+    patronymic?: string;    
+    deathDate?: Date;
+    birthDate?: Date;
+    burialDate?: Date; 
+    imgs?: string[];
+    changeDate?: Date;
+    createDate?: Date;
+    funeralurn?: string;
+    placeId?: number;
+
+    // other info
+    certificateNumber?: string;
+    registrationOffice?: string;
+    dateOfReference?: Date;
+    registrationAddress?: string;
+    archivedNumber?: number;
+    cremationPlace?: string;
+    graveDepth?: number;
+    ditcherSurname?: string; // ???????
+    soilType?: string;
+
+    // relative info
+    relativeFullName?: string;
+    address?: string;
+    contacts?: string;
 
     //cemetery?: string;
     //sector?: number;
@@ -10,26 +37,11 @@ export class Burial {
     //row?: number;
 
     //area?: number;
-    imgs?: string[];
-    status?: string;
-    burialType: string;
-    
-    deathDate?: Date;
-    birthDate?: Date;
-    burialDate?: Date; 
+    // status?: string;
+    // burialType: string;
 
-    deathcertificate?: string;
-    registrationAddress?: string;
-    dateOfReference?: Date;
-    archivednumber?: number;
 
-    relativeFullName?: string;
-    address?: string;
-    contacts?: string;
 
-    graveDepth?: number;
-    funeralurn?: string;
     //datacr?: string;
-    soilType?: string;
-    place: Place;
+    // place: Place;
 }

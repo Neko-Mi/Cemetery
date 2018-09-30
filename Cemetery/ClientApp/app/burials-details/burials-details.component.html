@@ -29,13 +29,12 @@
 
 <div *ngIf="burial" class="dop"
     [class.selected]="close === open">
-    
 
         <div class="col left names">
           <span>ФИО</span>
         </div>
         <div class="col right top">
-          <span>{{burial.fullName}}</span>
+          <span>{{burial.surname}} {{burial.name}} {{burial.patronymic}}</span>
         </div>
 
         <div class="col left">
@@ -67,21 +66,21 @@
           <span>Номер св-ва о смерти</span>
         </div>
         <div class="col right">
-            <span>{{burial.deathCertificate}}</span>
+            <span>{{burial.certificateNumber}}</span>
         </div>
           
         <div class="col left names">
           <span>Загс выд. св-во о смерти</span>
         </div>
         <div class="col right top">
-          <span>{{burial.zags}}</span>
+          <span>{{burial.registrationOffice}}</span>
         </div>
 
         <div class="col left">
           <span>Дата выд. св-ва о смерти</span>
         </div>
         <div class="col right">
-          <span>{{burial.datecer}}</span>
+          <span>{{burial.dateOfReference}}</span>
         </div>
 
         <div class="col left">
@@ -99,21 +98,21 @@
           <span>ФИО ответственного</span>
         </div>
         <div class="col right top">
-          <span>{{burial.relative.relativeFullName}}</span>
+          <span>{{burial.relativeFullName}}</span>
         </div>
 
         <div class="col left names">
           <span>Адрес ответственного</span>
         </div>
         <div class="col right top">
-          <span>{{burial.relative.address}}</span>
+          <span>{{burial.address}}</span>
         </div>
 
         <div class="col left names">
           <span>Адрес регистрации</span>
         </div>
         <div class="col right top">
-          <span>{{burial.relative.contacts}}</span>
+          <span>{{burial.contacts}}</span>
         </div>
           
         <hr class="mt8">
@@ -123,7 +122,7 @@
           <span>Глубина</span>
         </div>
         <div class="col right">
-          <span>{{burial.other.graveDepth}}</span>
+          <span>{{burial.graveDepth}}</span>
         </div>
 
         <div class="col left">
@@ -137,14 +136,14 @@
           <span>Дата кремации</span>
         </div>
         <div class="col right">
-          <span>{{burial.datacr}}</span>
+          <span>{{burial.cremationDate}}</span>
         </div>
 
         <div class="col left">
           <span>Вид захоронения</span>
         </div>
         <div class="col right">
-          <span>{{burial.other.soilType}}</span>
+          <span>{{burial.soilType}}</span>
         </div>
 
 
@@ -155,28 +154,28 @@
           <span>Кладбище</span>
         </div>
         <div class="col right top">
-          <span>{{burial.place.sector.cemetery.name}}</span>
+          <span></span>
         </div>
 
         <div class="col left">
           <span>Сектор</span>
         </div>
         <div class="col right">
-          <span>{{burial.place.sector.sectorName}}</span>
+          <span></span>
         </div>
 
         <div class="col left">
           <span>Ряд</span>
         </div>
         <div class="col right">
-          <span>{{burial.row}}</span>
+          <span></span>
         </div>
 
         <div class="col left">
           <span>Место</span>
         </div>
         <div class="col right">
-          <span>{{burial.place.number}}</span>
+          <span></span>
         </div>
 
 

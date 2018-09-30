@@ -15,8 +15,8 @@ namespace CemeteryApp.Models
         public string SoilType { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime ChangedDate { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime ChangeDate { get; set; }
 
         public string[] Imgs { get; set; }
 

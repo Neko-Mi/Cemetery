@@ -9,7 +9,7 @@ namespace CemeteryApp.Models
     {
         public int Id { get; set; }
         public string SectorName { get; set; }        
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreateDate { get; set; }
         public DateTime ChangeDate { get; set; }
         public string[] Imgs { get; set; }
 

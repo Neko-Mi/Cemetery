@@ -11,18 +11,19 @@
         <div class="el">
 
             
-              <span class="name">{{burial.fullName}}</span>
+              <span class="name">{{burial.surname}} {{burial.name}} {{burial.patronymic}}</span>
 
               <span class="other top">{{burial.birthDate | date:'dd-MM-yyyy'}} - {{burial.deathDate | date:'dd-MM-yyyy'}}</span>
               
               <span class="other ">{{burial.burialDate | date:'dd-MM-yyyy'}}</span>
 
 
-              <span class="other top">Сектор: {{burial.place.sector.sectorName}}</span>
-              <span class="other">Ряд: {{burial.row}}</span>
-              <span class="other">Место: {{burial.place.number}}</span>
+              <span class="other top">Сектор: </span>
+              <span class="other">Ряд: </span>
+              <span class="other">Место: </span>
               
-              <i class="material-icons icons">
+              <i class="material-icons icons"
+              (click)="onSelectChange(burial)">
                   create
                   </i>
               <i class="material-icons icons"
@@ -37,3 +38,4 @@
   
 </div>
 <app-burials-details [burial]="selectedInfo" [open]="open" (onClose)="onClosed($event)" ></app-burials-details>
+<app-change-burial [burial]="selectedInfo" [open]="open_change" (onClose)="onClosed($event)"></app-change-burial>

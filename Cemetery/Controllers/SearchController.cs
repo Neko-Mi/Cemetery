@@ -26,7 +26,9 @@ namespace CemeteryApp.Controllers
         public IEnumerable<Burial> LookFor(string part)
         {
             var burials = db.Burials
-                .Where(b => b.FullName.ToLower().Contains(part.ToLower()))
+                .Where(b => b.Surname.ToLower().Contains(part.ToLower())
+                    || b.Name.ToLower().Contains(part.ToLower())
+                    || b.Patronymic.ToLower().Contains(part.ToLower()))
                 .ToList();
                 //.Distinct();  // удалить повторы 
 
