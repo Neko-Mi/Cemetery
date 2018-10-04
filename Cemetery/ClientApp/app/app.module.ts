@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule }    from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -28,6 +29,16 @@ import { ChangeBurialComponent } from './change-burial/change-burial.component';
 import { ChangePlaceComponent } from './change-place/change-place.component';
 import { ChangeSectorComponent } from './change-sector/change-sector.component';
 import { ChangeCemeteryComponent } from './change-cemetery/change-cemetery.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { AddCemeteryComponent } from './add-cemetery/add-cemetery.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
+
 
 @NgModule({
   declarations: [
@@ -53,13 +64,21 @@ import { ChangeCemeteryComponent } from './change-cemetery/change-cemetery.compo
     ChangeBurialComponent,
     ChangePlaceComponent,
     ChangeSectorComponent,
-    ChangeCemeteryComponent
+    ChangeCemeteryComponent,
+    MainPageComponent,
+    AddCemeteryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+     MatCheckboxModule,
+     MatIconModule,
+     MatFormFieldModule,
+     MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

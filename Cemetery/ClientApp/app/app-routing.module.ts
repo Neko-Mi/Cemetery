@@ -5,10 +5,12 @@ import { DashboardCemeterysComponent }   from './dashboard-cemeterys/dashboard-c
 import { DashboardSectorsComponent }      from './dashboard-sectors/dashboard-sectors.component';
 import { DashboardPlacesComponent }      from './dashboard-places/dashboard-places.component';
 import { DashboardBurialsComponent }      from './dashboard-burials/dashboard-burials.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/cemeterys', pathMatch: 'full' },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: 'main', component: MainPageComponent },
   { path: 'cemeterys', component: DashboardCemeterysComponent },
   { path: 'sectors', component: DashboardSectorsComponent },
   { path: 'places', component: DashboardPlacesComponent },

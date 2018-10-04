@@ -1,3 +1,29 @@
-<p>
-  search works!
-</p>
+
+  <form>
+
+
+  <div id="search-component"
+  (click)="onFocus()">
+    <button mat-button id="settings-icon">
+      <mat-icon aria-label="icon-button with a add icon">settings</mat-icon>
+    </button>
+      
+    <input 
+    #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Поиск Кладбища" />
+
+    <button mat-button id="search-icon">
+        <mat-icon  aria-label="icon-button with a add icon">search</mat-icon>
+    </button>
+  
+    <ul class="search-result">
+      <li *ngFor="let cemetery of found$ | async" >
+        <a routerLink="/{{found$.id}}">
+          {{found$.name}}
+        </a>
+      </li>
+    </ul>
+ 
+  </div>
+
+
+  </form>

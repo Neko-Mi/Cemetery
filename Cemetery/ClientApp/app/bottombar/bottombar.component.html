@@ -1,16 +1,20 @@
-<div class="bottombar">
+<!-- <div class="bottombar"> -->
 
-  <div class="button">
-    <a class="label">ДОБАВИТЬ</a>
-  </div>
+    <button mat-raised-button color="primary" class="button" (click)="onAdd()">
+    <mat-icon aria-label="icon-button with a add icon">add</mat-icon>
+        ДОБАВИТЬ
+    </button>
+            
 
-  <div class="button">
-    <span class="label">ИМПОРТ</span>
-  </div>
+  <!-- <button class="button">
+      <i class="material-icons">add</i>
+      <span>ДОБАВИТЬ</span>
+  </button> -->
 
-  <div class="button">
-    <span class="label">ЭКСПОРТ</span>
-  </div>
+  <!-- <button class="mdc-button--unelevated	">
+      <i class="material-icons mdc-button__icon" aria-hidden="true">add</i>
+      Button
+  </button> -->
 
-
-</div>
+<!-- </div> -->
+<app-add-cemetery [open]="open_add" (onClose)="onClosed()"></app-add-cemetery>
