@@ -8,6 +8,7 @@ using CemeteryApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +30,12 @@ namespace CemeteryApp
             services.AddDbContext<CemeteryContext>(options => options.UseNpgsql(connectionString));
 
             services.AddMvc();
+			
+			// In production, the Angular files will be served from this directory
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,15 +45,31 @@ namespace CemeteryApp
             {
                 app.UseDeveloperExceptionPage();
 
-                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                /* app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     HotModuleReplacement = true
-                });
+                }); */
             }
-
-            app.UseDefaultFiles();
+			else 
+			{
+				//app.UseExceptionPage("/Error");
+				app.UseHsts();
+			}
+				
+			app.UseHttpsRedirection();
             app.UseStaticFiles();
+			app.UseSpaStaticFiles();
             app.UseMvc();
+			
+			app.UseSpa(spa =>
+			{
+				spa.Options.SourcePath = "ClientApp";
+				
+				if (env.IsDevelopment())
+				{
+					spa.UseAngularCliServer(npmScript: "start");
+				}
+			});
 
             // обработка маршрутов, которые не сопоставлены с ресурсам ранее
             app.Run(async (context) =>
