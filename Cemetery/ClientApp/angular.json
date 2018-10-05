@@ -24,7 +24,7 @@
               }
             ],
             "styles": [
-              "src/styles.css",
+              //"src/styles.css",
 			  "src/styles.sass",
               //"node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
@@ -76,7 +76,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/styles.css",
+              //"src/styles.css",
 			  "src/styles.sass",
               //"node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
