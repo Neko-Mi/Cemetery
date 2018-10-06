@@ -6,6 +6,22 @@
   [class.selected]="close === open"
   [class.withPhoto]="selectedPhoto !== PhotoOpen">
 
+  <button mat-icon-button>
+    <mat-icon aria-label="icon-button with a add icon">settings</mat-icon>
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Кладбище</button>
+      <button mat-menu-item (click)="onSector()">Сектор</button>
+      <button mat-menu-item (click)="onPlace()">Место</button>
+      <button mat-menu-item (click)="onBurial()">Захоронение</button>
+    </mat-menu>
+
+  
+
       <i class="material-icons" (click)="onSelectClose()">
       clear
       </i>
@@ -88,3 +104,9 @@
     </div>
   </div>
 </div>
+
+<!-- <app-add-switch [open]="open_switch" (onClose)="onClosed($event)"></app-add-switch> -->
+
+<app-add-sector [open]="open_sector" (onClose)="onClosed($event)"></app-add-sector>
+<app-add-place [open]="open_place" (onClose)="onClosed($event)"></app-add-place>
+<!-- <app-add-burial [open]="open_burial" (onClose)="onClosed($event)"></app-add-burial> -->

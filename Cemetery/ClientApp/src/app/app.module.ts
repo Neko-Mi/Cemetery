@@ -32,11 +32,19 @@ import { ChangeCemeteryComponent } from './change-cemetery/change-cemetery.compo
 import { MainPageComponent } from './main-page/main-page.component';
 import { AddCemeteryComponent } from './add-cemetery/add-cemetery.component';
 
+////ANGULAR MATERIAL////
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
+////ANGULAR MATERIAL END////
+
+import { AddSwitchComponent } from './add-switch/add-switch.component';
+import { AddSectorComponent } from './add-sector/add-sector.component';
+import { AddPlaceComponent } from './add-place/add-place.component';
+import { AddBurialComponent } from './add-burial/add-burial.component';
 
 
 
@@ -66,7 +74,11 @@ import {MatInputModule} from '@angular/material/input';
     ChangeSectorComponent,
     ChangeCemeteryComponent,
     MainPageComponent,
-    AddCemeteryComponent
+    AddCemeteryComponent,
+    AddSwitchComponent,
+    AddSectorComponent,
+    AddPlaceComponent,
+    AddBurialComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +90,8 @@ import {MatInputModule} from '@angular/material/input';
      MatCheckboxModule,
      MatIconModule,
      MatFormFieldModule,
-     MatInputModule
+     MatInputModule,
+     MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

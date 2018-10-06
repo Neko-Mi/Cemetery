@@ -8,6 +8,7 @@
     background-color: rgba(10,10,10,0.25)
     margin: auto
     position: fixed
+    left: 0%
     top: 72px
     overflow: auto
 
@@ -19,13 +20,21 @@
     background-color: #ffffff
     position: relative
     top: 50%
-    left: 50%;
-    margin-right: -50%;
+    left: 50%
+    margin-right: -50%
     transform: translate(-50%, -45%)
     border-radius: 3px
     box-shadow: 0 1px 4px rgba(0,0,0,0.75)
 
-
+    ////////MENU_ADD////////////
+    mat-menu
+        // position:absolute 
+        // top: 500px
+        // left: -500px
+        margin-top: 500px
+        margin-left: 500px
+        z-index: 2
+    ////////MENU_ADD////////////
     i 
         cursor: pointer
         float: right
@@ -59,7 +68,7 @@
                 padding-left: 8px
                 padding-right: 8px
         .top
-            margin-top: 34px
+            margin-top: 8px
         
         .names
             //vertical-align: top
@@ -154,3 +163,10 @@
 
 
 //////////GALLERY-END///////////
+
+////////MENU_ADD////////////
+// mat-menu
+//     position: absolute
+//     top: 500px
+//     left: -500px
+////////MENU_ADD////////////

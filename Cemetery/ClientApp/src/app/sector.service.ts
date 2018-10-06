@@ -11,11 +11,12 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class SectorService {
-    private url = "/api/sectors";
 
-    constructor(private messageService: MessageService,
-        private http: HttpClient) { }
-  
+  private url = "/api/sectors";
+
+  constructor(private messageService: MessageService,
+      private http: HttpClient) { }
+
   // get all sectors
   getSectors() {
       this.messageService.addnew('Сектора');

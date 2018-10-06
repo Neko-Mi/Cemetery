@@ -1,0 +1,153 @@
+<div class="background"
+[class.selected]="close === open"
+ >
+
+<div class="details"
+  [class.selected]="close === open"
+  [class.withPhoto]="selectedPhoto !== PhotoOpen">
+
+      <i class="material-icons" (click)="onSelectClose()">
+      clear
+      </i>
+
+
+  <div class="dop"
+    [class.selected]="close === open">
+
+    <div class="col left names top">
+      <span>Номер</span>
+    </div>
+    <div class="col right top small">
+      <input [(ngModel)]="place.number" placeholder="{{place.number}}"/>
+    </div>
+
+
+    <!-- <div class="col left names">
+      <span>Сектор</span>
+    </div>
+    <div class="col right small">
+      <input [(ngModel)]="place.sector" placeholder="{{place.sector}}"/>
+    </div> -->
+
+    <!-- <div class="col left names">
+      <span>Ряд</span>
+    </div>
+    <div class="col right small">
+      <input [(ngModel)]="place.row" placeholder="{{place.row}}"/>
+    </div> -->
+
+    
+    <hr class="mt8">
+
+
+    <!-- <div class="col left double">
+      <span>Выдавалось удостоверение на захоронение</span>
+    </div>
+    <div class="col right sdouble small">
+      <input  [(ngModel)]="place.certificate" placeholder="{{place.certificate}}"/>
+    </div> -->
+
+
+    <hr class="mt8 hdouble">
+
+
+    <div class="col left">
+      <span>Статус</span>
+    </div>
+    <div class="col right">
+        <input [(ngModel)]="place.status" placeholder="{{place.status}}"/>
+    </div>
+
+    <div class="col left">
+      <span>Тип места</span>
+    </div>
+    <div class="col right">
+        <input [(ngModel)]="place.placeType" placeholder="{{place.placeType}}"/>
+    </div>
+
+    <div class="col left">
+      <span>Тип грунта</span>
+    </div>
+    <div class="col right">
+        <input [(ngModel)]="place.soilType" placeholder="{{place.soilType}}"/>
+    </div>
+
+    <hr class="mt8">
+
+    <div class="col left">
+      <span>Ширина</span>
+    </div>
+    <div class="col right">
+        <input [(ngModel)]="place.width" placeholder="{{place.width}}"/>
+    </div>
+
+    <div class="col left">
+      <span>Длина</span>
+    </div>
+    <div class="col right">
+        <input [(ngModel)]="place.height" placeholder="{{place.height}}"/>
+    </div>
+
+    <!-- <div class="col left">
+      <span>Площадь</span>
+    </div>
+    <div class="col right">
+        <input [(ngModel)]="place.area" placeholder="{{place.area}}"/>
+    </div> -->
+
+
+
+        <div [class.selectedGallery]="selectedPhoto !== PhotoOpen">
+
+            <div class="gallery"
+            [class.selectedPhoto]="selectedPhoto === PhotoOpen">
+    
+                    <div class="arrows-container"
+                    (click)="onBefore()">
+                      <i class="material-icons arrows arrow-before">
+                        navigate_before
+                      </i>
+                    </div>
+                    
+                    <!-- <img src="{{place.imgs[number]}}" class="photo" alt=""> -->
+              
+                    <div class="arrows-container"
+                    (click)="onNext()">
+              
+                      <i class="material-icons arrows arrow-next">
+                          navigate_next
+                      </i>
+                    </div>
+              
+                    <!-- <span class="counter">{{number + 1}} / {{place.imgs.length}}</span>    -->
+
+
+                    <div class="btns">
+                      <span class=" photoAdd" (click)="addPhoto()">ДОБАВИТЬ ФОТОГРАФИЮ</span>
+                      <span class=" del" (click)="addPhoto()">УДАЛИТЬ ФОТОГРАФИЮ</span>
+                    </div>
+                    
+            </div>
+            
+          <span class="b_left add button" 
+          (click)="onSelectPhoto()"
+          [class.selectedPhoto]="selectedPhoto !== PhotoOpen">
+          ДОБАВИТЬ ФОТОГРАФИЮ
+          </span>
+
+        </div>
+        
+        <div class="buttons">
+          <!-- <button mat-raised-button color="primary" class="button" (click)="save(cemetery)">
+                ДОБАВИТЬ
+            </button> -->
+            <span class="b_right button" (click)="save(cemetery)" style="color:#0070c0">ДОБАВИТЬ</span>
+          <span class="b_right button" (click)="onSelectClose(cemetery)">ОТМЕНИТЬ</span>
+        </div>
+
+        
+        
+  
+    </div>
+  </div>
+</div>

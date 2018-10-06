@@ -1,0 +1,14 @@
+
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Кладбище</button>
+  <button mat-menu-item>Сектор</button>
+  <button mat-menu-item>Место</button>
+  <button mat-menu-item>Захоронение</button>
+</mat-menu>
+
+
+<app-add-cemetery [open]="open_cemetery" (onClose)="onClosed()"></app-add-cemetery>
+<app-add-sector [open]="open_sector" (onClose)="onClosed()"></app-add-sector>
+<app-add-place [open]="open_place" (onClose)="onClosed()"></app-add-place>
+<app-add-burial [open]="open_burial" (onClose)="onClosed()"></app-add-burial>

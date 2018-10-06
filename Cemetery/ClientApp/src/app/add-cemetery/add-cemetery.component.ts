@@ -21,6 +21,11 @@ export class AddCemeteryComponent implements OnInit {
   number:number = 0;
   selectedPhoto: boolean = false;
   PhotoOpen:boolean = this.selectedPhoto;
+
+  open_sector: boolean = false;
+  open_place: boolean = false;
+  open_burial: boolean = false;
+
   cemeterynochange: Cemetery = new Cemetery(); // данные вводимого пользователя
 
   cemetery: Cemetery = new Cemetery(); // данные вводимого пользователя
@@ -39,29 +44,6 @@ export class AddCemeteryComponent implements OnInit {
       );
     this.onSelectClose();
   }
-
-
-  // saveChanges(cemetery: Cemetery){
-  //   console.log(cemetery.id + " " + cemetery.name + " " + cemetery.address);
-  //   this.cemeteryService.updateCemetery(cemetery)
-  //     .subscribe(
-  //       (data: Cemetery) => { this.cemetery = data; this.done = true; },
-  //       error => console.log(error)
-  //     );
-  //   this.onSelectClose();
-  // }
-  
-  // delete(cemetery: Cemetery): void {
-  //   //this.cemeteries = this.cemeteries.filter(cem => cem !== cemetery);//удаление из отображения
-
-  //   this.cemeteryService.deleteCemetery(cemetery.id)
-  //     .subscribe(
-  //       (data: Cemetery) => { this.cemetery = data; this.done = true; },
-  //       error => console.log(error)
-  //     );
-
-  //   this.onSelectClose();
-  // }
 
 
 
@@ -98,8 +80,25 @@ export class AddCemeteryComponent implements OnInit {
     this.onClose.emit(this.open);
   }
 
+  onSector(): void {
+    this.open_sector =  !this.open_sector;
+    this.open = !this.open;  
+  }
 
+  onPlace(): void {
+    this.open_place =  !this.open_place;
+    this.open = !this.open;  
+  }
 
+  onBurial(): void {
+    this.open_burial =  !this.open_burial;
+    this.open = !this.open;  
+  }
+
+  // onSwitch(): void {
+  //   this.open_switch =  !this.open_switch;
+  //   //this.open = !this.open;  
+  // }
 
   constructor(    private cemeteryService: CemeteryService) { }
 

@@ -1,0 +1,82 @@
+<div class="background"
+[class.selected]="close === open"
+ >
+
+<div  class="details"
+  [class.selected]="close === open"
+  [class.withPhoto]="selectedPhoto !== PhotoOpen">
+
+      <i class="material-icons" (click)="onSelectClose()">
+      clear
+      </i>
+
+
+      <div  class="dop"
+           [class.selected]="close === open">
+
+          <input type="hidden" [(ngModel)]="sector.id" value="{{sector.id}}" name="id">
+
+          <div class="col left names top">
+              <span>Номер</span>
+          </div>
+          <div class="col right top">
+              <input [(ngModel)]="sector.sectorName" placeholder="{{sector.sectorName}}" />
+          </div>
+
+
+
+
+          <div [class.selectedGallery]="selectedPhoto !== PhotoOpen">
+
+              <div class="gallery"
+                   [class.selectedPhoto]="selectedPhoto === PhotoOpen">
+
+                  <div class="arrows-container"
+                       (click)="onBefore()">
+                      <i class="material-icons arrows arrow-before">
+                          navigate_before
+                      </i>
+                  </div>
+
+                  <!-- <img src="{{sector.imgs[number]}}" class="photo" alt=""> -->
+
+                  <div class="arrows-container"
+                       (click)="onNext()">
+
+                      <i class="material-icons arrows arrow-next">
+                          navigate_next
+                      </i>
+                  </div>
+
+                  <!-- <span class="counter">{{number + 1}} / {{sector.imgs.length}}</span> -->
+
+
+                  <div class="btns">
+                      <span class=" photoAdd" (click)="addPhoto()">ДОБАВИТЬ ФОТОГРАФИЮ</span>
+                      <span class=" del" (click)="addPhoto()">УДАЛИТЬ ФОТОГРАФИЮ</span>
+                  </div>
+
+              </div>
+
+              <span class="b_left add button"
+                    (click)="onSelectPhoto()"
+                    [class.selectedPhoto]="selectedPhoto !== PhotoOpen">
+                  ДОБАВИТЬ ФОТОГРАФИЮ
+              </span>
+
+          </div>
+
+          <div class="buttons">
+            <!-- <button mat-raised-button color="primary" class="button" (click)="save(cemetery)">
+                  ДОБАВИТЬ
+              </button> -->
+              <span class="b_right button" (click)="save(cemetery)" style="color:#0070c0">ДОБАВИТЬ</span>
+            <span class="b_right button" (click)="onSelectClose(cemetery)">ОТМЕНИТЬ</span>
+          </div>
+
+
+
+
+      </div>
+  </div>
+</div>
