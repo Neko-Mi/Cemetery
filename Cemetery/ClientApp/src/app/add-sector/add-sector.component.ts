@@ -19,6 +19,11 @@ export class AddSectorComponent implements OnInit {
   number:number = 0;
   selectedPhoto: boolean = false;
   PhotoOpen:boolean = this.selectedPhoto;
+
+  open_cemetery: boolean = false;
+  open_place: boolean = false;
+  open_burial: boolean = false;
+
   sectornochange: Sector = new Sector(); // данные вводимого пользователя
 
   sector: Sector = new Sector(); // данные вводимого пользователя
@@ -70,6 +75,21 @@ export class AddSectorComponent implements OnInit {
     this.open = !this.open;
     this.selectedPhoto =  !this.selectedPhoto;
     this.onClose.emit(this.open);
+  }
+
+  onCemetery(): void {
+    this.open_cemetery =  !this.open_cemetery;
+    this.open = !this.open;  
+  }
+
+  onPlace(): void {
+    this.open_place =  !this.open_place;
+    this.open = !this.open;  
+  }
+
+  onBurial(): void {
+    this.open_burial =  !this.open_burial;
+    this.open = !this.open;  
   }
 
   constructor( private sectorService: SectorService) { }

@@ -8,15 +8,51 @@ import { Cemetery } from '../cemetery';
 })
 export class BottombarComponent implements OnInit {
 
-  open_add: boolean = false;
+  open_cemetery: boolean = false;
+  open_sector: boolean = false;
+  open_place: boolean = false;
+  open_burial: boolean = false;
 
   
-  onAdd(): void {
-    this.open_add = !this.open_add;
+  onCemetery(): void {
+    this.open_cemetery = !this.open_cemetery;
+  }
+  onSector(): void {
+    this.open_sector = !this.open_sector;
+  }
+  onPlace(): void {
+    this.open_place = !this.open_place;
+  }
+  onBurial(): void {
+    this.open_burial = !this.open_burial;
   }
 
-  onClosed() {//для октрытия с первого раза после закрытия
-    this.open_add = !this.open_add;
+  onClosedCemetery() {//для октрытия с первого раза после закрытия
+    this.open_cemetery = !this.open_cemetery;
+    // this.open_sector = !this.open_sector;
+    // this.open_place = !this.open_place;
+    // this.open_burial = !this.open_burial;
+  }
+
+  onClosedSector() {//для октрытия с первого раза после закрытия
+    //this.open_cemetery = !this.open_cemetery;
+    this.open_sector = !this.open_sector;
+    // this.open_place = !this.open_place;
+    // this.open_burial = !this.open_burial;
+  }
+
+  onClosedPlace() {//для октрытия с первого раза после закрытия
+    //this.open_cemetery = !this.open_cemetery;
+    // this.open_sector = !this.open_sector;
+     this.open_place = !this.open_place;
+    // this.open_burial = !this.open_burial;
+  }
+
+  onClosedBurial() {//для октрытия с первого раза после закрытия
+    //this.open_cemetery = !this.open_cemetery;
+    // this.open_sector = !this.open_sector;
+    // this.open_place = !this.open_place;
+    this.open_burial = !this.open_burial;
   }
 
   constructor() { }

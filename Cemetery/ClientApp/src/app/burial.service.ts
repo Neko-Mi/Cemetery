@@ -8,7 +8,9 @@ import { Burial } from './burial';
 import { MessageService } from './message.service';
  
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BurialService {
   private url = "/api/burials";
 
