@@ -26,28 +26,34 @@
         <div class="col left names">
             <span>Дата смерти</span>
           </div>
-          <div class="col right small date">
-            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          <div class="col right">
+            <mat-form-field>
+              <input matInput [matDatepicker]="deathDate" placeholder="{{burial.deathDate}}">
+              <mat-datepicker-toggle matSuffix [for]="deathDate"></mat-datepicker-toggle>
+              <mat-datepicker #deathDate startView="year" ></mat-datepicker>
+            </mat-form-field>
           </div>
 
         <div class="col left names">
           <span>Дата захоронения</span>
         </div>
-        <div class="col right small date">
-          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+        <div class="col right">
+          <mat-form-field>
+            <input matInput [matDatepicker]="burialDate" placeholder="{{burial.burialDate}}">
+            <mat-datepicker-toggle matSuffix [for]="burialDate"></mat-datepicker-toggle>
+            <mat-datepicker #burialDate startView="year" ></mat-datepicker>
+          </mat-form-field>
         </div>
 
         <div class="col left names">
           <span>Дата рождения</span>
         </div>
-        <div class="col right small date">
-          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+        <div class="col right">
+          <mat-form-field>
+            <input matInput [matDatepicker]="birthDate" placeholder="{{burial.birthDate}}">
+            <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
+            <mat-datepicker #birthDate startView="year" ></mat-datepicker>
+          </mat-form-field>
         </div>
 
 
@@ -71,10 +77,12 @@
         <div class="col left names">
             <span>Дата выд. св-ва о смерти</span>
           </div>
-          <div class="col right small date">
-            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+          <div class="col right">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker1" placeholder="">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1 startView="year" ></mat-datepicker>
+            </mat-form-field>
           </div>
 
         <div class="col left names">
@@ -120,10 +128,12 @@
         <div class="col left names">
           <span>Дата кремации</span>
         </div>
-        <div class="col right small date">
-          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-          <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+        <div class="col right">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="year" ></mat-datepicker>
+          </mat-form-field>
         </div>
 
         <div class="col left names">

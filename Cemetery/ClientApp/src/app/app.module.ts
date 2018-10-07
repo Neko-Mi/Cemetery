@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -32,14 +32,16 @@ import { ChangeCemeteryComponent } from './change-cemetery/change-cemetery.compo
 import { MainPageComponent } from './main-page/main-page.component';
 import { AddCemeteryComponent } from './add-cemetery/add-cemetery.component';
 
-////ANGULAR MATERIAL////
+//// ANGULAR MATERIAL////
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
-////ANGULAR MATERIAL END////
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
+//// ANGULAR MATERIAL END////
 
 import { AddSwitchComponent } from './add-switch/add-switch.component';
 import { AddSectorComponent } from './add-sector/add-sector.component';
@@ -91,7 +93,9 @@ import { AddBurialComponent } from './add-burial/add-burial.component';
      MatIconModule,
      MatFormFieldModule,
      MatInputModule,
-     MatMenuModule
+     MatMenuModule,
+     MatDatepickerModule,
+     MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
