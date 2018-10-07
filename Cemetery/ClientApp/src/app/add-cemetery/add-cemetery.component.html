@@ -6,11 +6,7 @@
   [class.selected]="close === open"
   [class.withPhoto]="selectedPhoto !== PhotoOpen">
 
-  <button mat-icon-button>
-    <mat-icon aria-label="icon-button with a add icon">settings</mat-icon>
-  </button>
-
-  <button mat-button [matMenuTriggerFor]="menu">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
   </button>
     <mat-menu #menu="matMenu">
