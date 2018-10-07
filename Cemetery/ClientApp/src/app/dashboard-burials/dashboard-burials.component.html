@@ -36,5 +36,5 @@
   </div>
   
 </div>
-<app-burials-details [burial]="selectedInfo" [open]="open" (onClose)="onClosed($event)" ></app-burials-details>
-<app-change-burial [burial]="selectedInfo" [open]="open_change" (onClose)="onClosed($event)"></app-change-burial>
+<app-burials-details [burial]="selectedBurial" [open]="open_detail" (onClose)="onClosedDetails()" ></app-burials-details>
+<app-change-burial [burial]="selectedBurial" [open]="open_change" (onClose)="onClosedChange()"></app-change-burial>

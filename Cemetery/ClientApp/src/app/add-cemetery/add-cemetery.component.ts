@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Cemetery } from '../cemetery';
-import { CemeteryService }  from '../cemetery.service';
+import { CemeteryService } from '../cemetery.service';
 
 @Component({
   selector: 'app-add-cemetery',
@@ -10,36 +10,31 @@ import { CemeteryService }  from '../cemetery.service';
 })
 export class AddCemeteryComponent implements OnInit {
 
-
   @Input() open: boolean;
 
   @Output() onClose = new EventEmitter<boolean>();
 
-  cemeteries: Cemetery[] = [];
-
   close: boolean = !open;
-  number:number = 0;
-  selectedPhoto: boolean = false;
-  PhotoOpen:boolean = this.selectedPhoto;
 
-  open_sector: boolean = false;
-  open_place: boolean = false;
-  open_burial: boolean = false;
+  number = 0;
+  selectedPhoto = false;
+  PhotoOpen: boolean = this.selectedPhoto;
+
 
   cemeterynochange: Cemetery = new Cemetery(); // данные вводимого пользователя
 
   cemetery: Cemetery = new Cemetery(); // данные вводимого пользователя
-      
-  //receivedCemetery: Cemetery; // полученный пользователь
-  done: boolean = false;
-  
+
+  done = false;
+
 
   save(cemetery: Cemetery) {
     // 'post' using for creating new object in database
-    // 
+    //
     this.cemeteryService.createCemetery(cemetery)
       .subscribe(
-        (data: Cemetery) => { this.cemetery = data; this.done = true; },
+        (data: Cemetery) => { this.cemetery = data;
+                              this.done = true; },
         error => console.log(error)
       );
     this.onSelectClose();
@@ -53,25 +48,26 @@ export class AddCemeteryComponent implements OnInit {
     this.number = 0;
     this.open = !this.open;
     this.onClose.emit(this.open);
-    if(this.selectedPhoto == true)
+    if ( this.selectedPhoto === true ) {
       this.selectedPhoto = false;
+    }
   }
 
   // onBefore(): void {
   //   this.number--;
-  //   if(this.number == -1) 
+  //   if(this.number == -1)
   //     this.number = this.cemetery.imgs.length - 1;
   // }
 
   // onNext(): void {
   //   this.number++;
-  //   if(this.number == this.cemetery.imgs.length) 
+  //   if(this.number == this.cemetery.imgs.length)
   //     this.number = 0;
   // }
-  
+
   onSelectPhoto(): void {
     this.selectedPhoto =  !this.selectedPhoto;
-    //this.open = !this.open;  
+    // this.open = !this.open;
   }
 
   onClosed() {
@@ -80,27 +76,8 @@ export class AddCemeteryComponent implements OnInit {
     this.onClose.emit(this.open);
   }
 
-  onSector(): void {
-    this.open_sector =  !this.open_sector;
-    this.open = !this.open;  
-  }
 
-  onPlace(): void {
-    this.open_place =  !this.open_place;
-    this.open = !this.open;  
-  }
-
-  onBurial(): void {
-    this.open_burial =  !this.open_burial;
-    this.open = !this.open;  
-  }
-
-  // onSwitch(): void {
-  //   this.open_switch =  !this.open_switch;
-  //   //this.open = !this.open;  
-  // }
-
-  constructor(    private cemeteryService: CemeteryService) { }
+  constructor(private cemeteryService: CemeteryService) { }
 
   ngOnInit() {
   }

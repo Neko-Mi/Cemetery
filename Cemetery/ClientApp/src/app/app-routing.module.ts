@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardCemeterysComponent }   from './dashboard-cemeterys/dashboard-cemeterys.component';
-import { DashboardSectorsComponent }      from './dashboard-sectors/dashboard-sectors.component';
-import { DashboardPlacesComponent }      from './dashboard-places/dashboard-places.component';
-import { DashboardBurialsComponent }      from './dashboard-burials/dashboard-burials.component';
+import { DashboardCemeterysComponent } from './dashboard-cemeterys/dashboard-cemeterys.component';
+import { DashboardSectorsComponent } from './dashboard-sectors/dashboard-sectors.component';
+import { DashboardPlacesComponent } from './dashboard-places/dashboard-places.component';
+import { DashboardBurialsComponent } from './dashboard-burials/dashboard-burials.component';
 import { MainPageComponent } from './main-page/main-page.component';
 
 

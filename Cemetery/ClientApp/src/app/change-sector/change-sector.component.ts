@@ -83,11 +83,11 @@ export class ChangeSectorComponent implements OnInit {
         //this.open = !this.open;  
     }
 
-    onClosed(closed:any) {
-        closed == false ? this.open = false : this.open = true;
-        this.selectedPhoto =  !this.selectedPhoto;
-        this.onClose.emit(this.open);
-    }
+    // onClosed(closed:any) {
+    //     closed == false ? this.open = false : this.open = true;
+    //     this.selectedPhoto =  !this.selectedPhoto;
+    //     this.onClose.emit(this.open);
+    // }
 
     ngOnInit() {
     }

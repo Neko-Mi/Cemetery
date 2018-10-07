@@ -16,6 +16,7 @@ export class DashboardPlacesComponent implements OnInit {
   selectedPlace: Place;
   selectedInfo: Place;
 
+  
   open: boolean = false;
   open_change: boolean = false;
 

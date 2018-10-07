@@ -17,6 +17,7 @@ export class DashboardCemeterysComponent implements OnInit {
     selectedCemetery: Cemetery;
     selectedInfo: Cemetery;
 
+
     open: boolean = false;
     open_change: boolean = false;
 

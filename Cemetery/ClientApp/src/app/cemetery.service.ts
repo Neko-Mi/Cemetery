@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
- 
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
- 
+
+// import { Observable, of } from 'rxjs';
+// import { catchError, map, tap } from 'rxjs/operators';
+
 import { Cemetery } from './cemetery';
 import { MessageService } from './message.service';
- 
-const httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
-};
+
+// const httpOptions = {
+//     headers: new HttpHeaders({'Content-Type': 'application/json'})
+// };
 
 @Injectable({
   providedIn: 'root'
 })
 export class CemeteryService {
 
-    private url = "/api/cemeteries";
+    private url = '/api/cemeteries';
 
     constructor(private messageService: MessageService,
         private http: HttpClient) {
@@ -29,11 +29,11 @@ export class CemeteryService {
         return this.http.get(this.url);
     }
 
-    //getCemetery(id: number): Observable<Cemetery> {
+    // getCemetery(id: number): Observable<Cemetery> {
     //    // TODO: send the message _after_ fetching the hero
     //    //this.messageService.addnew(`CemeteryService: fetched Cemetery id=${id}`);
     //    return of(CEMETERYS.find(cemetery => cemetery.id === id));
-    //}
+    // }
 
     createCemetery(cem: Cemetery) {
         return this.http.post(this.url, cem);

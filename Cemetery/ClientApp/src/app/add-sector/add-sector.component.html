@@ -6,15 +6,6 @@
   [class.selected]="close === open"
   [class.withPhoto]="selectedPhoto !== PhotoOpen">
 
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="onCemetery()">Кладбище</button>
-      <button mat-menu-item>Сектор</button>
-      <button mat-menu-item (click)="onPlace()">Место</button>
-      <button mat-menu-item (click)="onBurial()">Захоронение</button>
-    </mat-menu>
 
       <i class="material-icons" (click)="onSelectClose()">
       clear
@@ -77,9 +68,6 @@
           </div>
 
           <div class="buttons">
-            <!-- <button mat-raised-button color="primary" class="button" (click)="save(cemetery)">
-                  ДОБАВИТЬ
-              </button> -->
               <span class="b_right button" (click)="save(cemetery)" style="color:#0070c0">ДОБАВИТЬ</span>
             <span class="b_right button" (click)="onSelectClose(cemetery)">ОТМЕНИТЬ</span>
           </div>
@@ -90,9 +78,3 @@
       </div>
   </div>
 </div>
-
-<!-- <app-add-cemetery [open]="open_cemetery" ></app-add-cemetery> -->
-
-<!-- <app-add-cemetery [open]="open_cemetery" (onClose)="onClosed($event)"></app-add-cemetery> -->
-<!-- <app-add-place [open]="open_place" (onClose)="onClosed($event)"></app-add-place>
-<app-add-burial [open]="open_burial" (onClose)="onClosed($event)"></app-add-burial> -->

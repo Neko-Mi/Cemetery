@@ -84,7 +84,7 @@ export class ChangeCemeteryComponent implements OnInit {
   }
 
   onClosed(closed:any) {
-    closed == false ? this.open = false : this.open = true;
+    this.open = !this.open ;
     this.selectedPhoto =  !this.selectedPhoto;
     this.onClose.emit(this.open);
   }

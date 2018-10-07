@@ -18,13 +18,13 @@ export class ChangeBurialComponent implements OnInit {
     burials: Burial[] = [];
 
     close: boolean = !open;
-    number: number = 0;
-    selectedPhoto: boolean = false;
+    number = 0;
+    selectedPhoto = false;
     PhotoOpen: boolean = this.selectedPhoto;
 
     burialchange: Burial = new Burial(); // данные вводимого пользователя
 
-    done: boolean = false;
+    done = false;
 
     constructor(
         private burialService: BurialService
@@ -61,29 +61,32 @@ export class ChangeBurialComponent implements OnInit {
         this.number = 0;
         this.open = !this.open;
         this.onClose.emit(this.open);
-        if (this.selectedPhoto == true)
+        if (this.selectedPhoto === true) {
             this.selectedPhoto = false;
+        }
     }
 
     onBefore(): void {
         this.number--;
-        if (this.number == -1)
+        if (this.number === -1) {
             this.number = this.burial.imgs.length - 1;
+        }
     }
 
     onNext(): void {
         this.number++;
-        if (this.number == this.burial.imgs.length)
+        if (this.number === this.burial.imgs.length) {
             this.number = 0;
+        }
     }
 
     onSelectPhoto(): void {
         this.selectedPhoto = !this.selectedPhoto;
-        //this.open = !this.open;  
+        // this.open = !this.open;
     }
 
     onClosed(closed: any) {
-        closed == false ? this.open = false : this.open = true;
+        this.open = !this.open;
         this.selectedPhoto = !this.selectedPhoto;
         this.onClose.emit(this.open);
     }

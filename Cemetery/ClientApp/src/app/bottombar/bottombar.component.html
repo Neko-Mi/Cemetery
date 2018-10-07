@@ -1,14 +1,9 @@
-<!-- <div class="bottombar"> -->
 
     <button mat-raised-button color="primary" 
-    [matMenuTriggerFor]="menu"
-    class="button" (click)="onAdd()">
+    [matMenuTriggerFor]="menu">
     <mat-icon aria-label="icon-button with a add icon">add</mat-icon>
         ДОБАВИТЬ
     </button>
-    <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button> -->
         <mat-menu #menu="matMenu">
           <button mat-menu-item (click)="onCemetery()">Кладбище</button>
           <button mat-menu-item (click)="onSector()">Сектор</button>
@@ -16,17 +11,7 @@
           <button mat-menu-item (click)="onBurial()">Захоронение</button>
         </mat-menu>
 
-  <!-- <button class="button">
-      <i class="material-icons">add</i>
-      <span>ДОБАВИТЬ</span>
-  </button> -->
 
-  <!-- <button class="mdc-button--unelevated	">
-      <i class="material-icons mdc-button__icon" aria-hidden="true">add</i>
-      Button
-  </button> -->
-
-<!-- </div> -->
 <app-add-cemetery [open]="open_cemetery" (onClose)="onClosedCemetery()"></app-add-cemetery>
 <app-add-sector [open]="open_sector" (onClose)="onClosedSector()"></app-add-sector>
 <app-add-place [open]="open_place" (onClose)="onClosedPlace()"></app-add-place>

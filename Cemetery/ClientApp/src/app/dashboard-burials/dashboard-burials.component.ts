@@ -14,10 +14,9 @@ export class DashboardBurialsComponent implements OnInit {
     burials: Burial[];
 
     selectedBurial: Burial;
-    selectedInfo: Burial;
 
-    open: boolean = false;
-    open_change: boolean = false;
+    open_detail = false;
+    open_change = false;
 
     constructor(private burialService: BurialService) { }
 
@@ -30,18 +29,21 @@ export class DashboardBurialsComponent implements OnInit {
     }
 
     onSelectInfo(burial: Burial): void {
-        this.selectedInfo = burial;
-        this.open = !this.open;
+        this.selectedBurial = burial;
+        this.open_detail = !this.open_detail;
     }
 
     onSelectChange(burial: Burial): void {
-        this.selectedInfo = burial;
+        this.selectedBurial = burial;
         this.open_change = !this.open_change;
     }
 
-    onClosed(closed: any) {
-        closed == false ? this.open = false : this.open = true;
-        closed == false ? this.open_change = false : this.open_change = true;
+    onClosedDetails() {
+        this.open_detail = !this.open_detail;
+    }
+
+    onClosedChange() {
+        this.open_change = !this.open_change;
     }
 
     getBurials(): void {
