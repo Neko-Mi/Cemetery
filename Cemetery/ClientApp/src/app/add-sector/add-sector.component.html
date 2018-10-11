@@ -12,10 +12,8 @@
       </i>
 
 
-      <div  class="dop"
+      <div class="dop"
            [class.selected]="close === open">
-
-          <input type="hidden" [(ngModel)]="sector.id" value="{{sector.id}}" name="id">
 
           <div class="col left names top">
               <span>Номер</span>
@@ -23,6 +21,24 @@
           <div class="col right top">
               <input [(ngModel)]="sector.sectorName" placeholder="{{sector.sectorName}}" />
           </div>
+
+          <!--------------------------- 
+               Try to do it:
+               https://material.angular.io/components/select/overview 
+          ----------------------------->
+          <div class="col left names top">
+              <span>Кладбище</span>
+          </div>
+          <div class="col right top">
+              <mat-form-field>
+                  <mat-select placeholder="Кладбище"  [(ngModel)]="sector.cemeteryId">
+                      <mat-option *ngFor="let cemetery of cemeteries" [value]="cemetery.id">
+                          {{cemetery.name}}
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+
 
 
 
@@ -53,6 +69,8 @@
 
 
                   <div class="btns">
+                      ss
+                      an
                       <span class=" photoAdd" (click)="addPhoto()">ДОБАВИТЬ ФОТОГРАФИЮ</span>
                       <span class=" del" (click)="addPhoto()">УДАЛИТЬ ФОТОГРАФИЮ</span>
                   </div>
@@ -68,8 +86,8 @@
           </div>
 
           <div class="buttons">
-              <span class="b_right button" (click)="save(cemetery)" style="color:#0070c0">ДОБАВИТЬ</span>
-            <span class="b_right button" (click)="onSelectClose(cemetery)">ОТМЕНИТЬ</span>
+              <span class="b_right button" (click)="save(sector)" style="color:#0070c0">ДОБАВИТЬ</span>
+              <span class="b_right button" (click)="onSelectClose(sector)">ОТМЕНИТЬ</span>
           </div>
 
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CemeteryApp.Models;
+using CemeteryApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CemeteryApp

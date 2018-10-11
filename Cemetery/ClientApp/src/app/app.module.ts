@@ -40,7 +40,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material';
+import { MatNativeDateModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
 //// ANGULAR MATERIAL END////
 
 import { AddSwitchComponent } from './add-switch/add-switch.component';
@@ -95,7 +96,8 @@ import { AddBurialComponent } from './add-burial/add-burial.component';
      MatInputModule,
      MatMenuModule,
      MatDatepickerModule,
-     MatNativeDateModule
+      MatNativeDateModule,
+      MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

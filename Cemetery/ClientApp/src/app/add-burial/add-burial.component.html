@@ -12,228 +12,242 @@
       </i>
 
 
-  <div class="dop"
-    [class.selected]="close === open">
+      <div class="dop"
+           [class.selected]="close === open">
 
-        <div class="col left names top">
-          <span>ФИО</span>
-        </div>
-        <div class="col right top">
-              <input [(ngModel)]="burial.name" placeholder="{{burial.name}}"/>
-        </div>
+          <div class="col left names top">
+              <span>Фамилия</span>
+          </div>
+          <div class="col right top">
+              <input [(ngModel)]="burial.surname" placeholder="{{burial.surname}}" />
+          </div>
 
-        
-        <div class="col left names">
-            <span>Дата смерти</span>
+          <div class="col left names top">
+              <span>Имя</span>
+          </div>
+          <div class="col right top">
+              <input [(ngModel)]="burial.name" placeholder="{{burial.name}}" />
+          </div>
+
+          <div class="col left names top">
+              <span>Отчество</span>
+          </div>
+          <div class="col right top">
+              <input [(ngModel)]="burial.patronymic" placeholder="{{burial.patronymic}}" />
+          </div>
+
+
+          <div class="col left names">
+              <span>Дата смерти</span>
           </div>
           <div class="col right">
-            <mat-form-field>
-              <input matInput [matDatepicker]="deathDate" placeholder="{{burial.deathDate}}">
-              <mat-datepicker-toggle matSuffix [for]="deathDate"></mat-datepicker-toggle>
-              <mat-datepicker #deathDate startView="year" ></mat-datepicker>
-            </mat-form-field>
+              <mat-form-field>
+                  <input matInput [matDatepicker]="deathDate" placeholder="{{burial.deathDate}}">
+                  <mat-datepicker-toggle matSuffix [for]="deathDate"></mat-datepicker-toggle>
+                  <mat-datepicker #deathDate startView="year"></mat-datepicker>
+              </mat-form-field>
           </div>
 
-        <div class="col left names">
-          <span>Дата захоронения</span>
-        </div>
-        <div class="col right">
-          <mat-form-field>
-            <input matInput [matDatepicker]="burialDate" placeholder="{{burial.burialDate}}">
-            <mat-datepicker-toggle matSuffix [for]="burialDate"></mat-datepicker-toggle>
-            <mat-datepicker #burialDate startView="year" ></mat-datepicker>
-          </mat-form-field>
-        </div>
-
-        <div class="col left names">
-          <span>Дата рождения</span>
-        </div>
-        <div class="col right">
-          <mat-form-field>
-            <input matInput [matDatepicker]="birthDate" placeholder="{{burial.birthDate}}">
-            <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
-            <mat-datepicker #birthDate startView="year" ></mat-datepicker>
-          </mat-form-field>
-        </div>
-
-
-        <hr class="mt8">
-
-
-        <div class="col left names">
-            <span>Номер св-ва о смерти</span>
-        </div>
-        <div class="col right">
-              <input [(ngModel)]="burial.number_death" placeholder="{{burial.number_death}}"/>
-        </div>
-
-        <div class="col left names">
-            <span>Загс выд. св-во о смерти</span>
-        </div>
-        <div class="col right">
-              <input [(ngModel)]="burial.zags" placeholder="{{burial.zags}}"/>
-        </div>
-
-        <div class="col left names">
-            <span>Дата выд. св-ва о смерти</span>
+          <div class="col left names">
+              <span>Дата захоронения</span>
           </div>
           <div class="col right">
-            <mat-form-field>
-              <input matInput [matDatepicker]="picker1" placeholder="">
-              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-              <mat-datepicker #picker1 startView="year" ></mat-datepicker>
-            </mat-form-field>
+              <mat-form-field>
+                  <input matInput [matDatepicker]="burialDate" placeholder="{{burial.burialDate}}">
+                  <mat-datepicker-toggle matSuffix [for]="burialDate"></mat-datepicker-toggle>
+                  <mat-datepicker #burialDate startView="year"></mat-datepicker>
+              </mat-form-field>
           </div>
 
-        <div class="col left names">
-            <span>Номер в арх. книге</span>
-        </div>
-        <div class="col right">
-              <input [(ngModel)]="burial.number_book" placeholder="{{burial.number_book}}"/>
-        </div>
-
-        <hr class="mt8">
-
-
-        <div class="col left names">
-            <span>ФИО ответственного</span>
-        </div>
-        <div class="col right">
-              <input [(ngModel)]="burial.name_s" placeholder="{{burial.name_s}}"/>
-        </div>
-        <div class="col left names">
-            <span>Адрес ответственного</span>
-        </div>
-        <div class="col right">
-              <input [(ngModel)]="burial.address_s" placeholder="{{burial.address_s}}"/>
-        </div>
-        <div class="col left names">
-            <span>Адрес регистрации</span>
-        </div>
-        <div class="col right">
-              <input [(ngModel)]="burial.address_r" placeholder="{{burial.address_r}}"/>
-        </div>
-
-
-        <hr class="mt8">
-
-
-        <div class="col left names">
-          <span>Урна с прахом</span>
-        </div>
-        <div class="col right small">
-          <input [(ngModel)]="burial.urn" placeholder="{{burial.urn}}"/>
-        </div>
-
-        <div class="col left names">
-          <span>Дата кремации</span>
-        </div>
-        <div class="col right">
-          <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker startView="year" ></mat-datepicker>
-          </mat-form-field>
-        </div>
-
-        <div class="col left names">
-          <span>Глубина</span>
-        </div>
-        <div class="col right small">
-          <input [(ngModel)]="burial.depth" placeholder="{{burial.depth}}"/>
-        </div>
-        
-        <div class="col left names">
-          <span>Вид захоронения</span>
-        </div>
-        <div class="col right small">
-          <input [(ngModel)]="burial.sort" placeholder="{{burial.sort}}"/>
-        </div>
-
-
-        <hr class="mt8">
-
-
-        <div class="col left names">
-            <span>Кладбище</span>
-        </div>
-        <div class="col right">
-              <input [(ngModel)]="burial.cemetery" placeholder="{{burial.cemetery}}"/>
-        </div>
-
-
-        <div class="col left names">
-            <span>Номер</span>
-          </div>
-          <div class="col right small">
-            <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
-          </div>
-      
-      
           <div class="col left names">
-            <span>Сетор</span>
+              <span>Дата рождения</span>
           </div>
-          <div class="col right small">
-            <input [(ngModel)]="burial.sector" placeholder="{{burial.sector}}"/>
+          <div class="col right">
+              <mat-form-field>
+                  <input matInput [matDatepicker]="birthDate" placeholder="{{burial.birthDate}}">
+                  <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
+                  <mat-datepicker #birthDate startView="year"></mat-datepicker>
+              </mat-form-field>
           </div>
-      
+
+
+          <hr class="mt8">
+
+
           <div class="col left names">
-            <span>Ряд</span>
+              <span>Номер св-ва о смерти</span>
+          </div>
+          <div class="col right">
+              <input [(ngModel)]="burial.certificateNumber" placeholder="{{burial.certificateNumber}}" />
+          </div>
+
+          <div class="col left names">
+              <span>Загс выд. св-во о смерти</span>
+          </div>
+          <div class="col right">
+              <input [(ngModel)]="burial.registrationOffice" placeholder="{{burial.registrationOffice}}" />
+          </div>
+
+          <div class="col left names">
+              <span>Дата выд. св-ва о смерти</span>
+          </div>
+          <div class="col right">
+              <mat-form-field>
+                  <input matInput [matDatepicker]="dateOfReference" placeholder="{{burial.dateOfReference}}">
+                  <mat-datepicker-toggle matSuffix [for]="dateOfReference"></mat-datepicker-toggle>
+                  <mat-datepicker #dateOfReference startView="year"></mat-datepicker>
+              </mat-form-field>
+          </div>
+
+          <div class="col left names">
+              <span>Номер в арх. книге</span>
+          </div>
+          <div class="col right">
+              <input [(ngModel)]="burial.archivedNumber" placeholder="{{burial.archivedNumber}}" />
+          </div>
+
+          <hr class="mt8">
+
+
+          <div class="col left names">
+              <span>ФИО ответственного</span>
+          </div>
+          <div class="col right">
+              <input [(ngModel)]="burial.relativeFullName" placeholder="{{burial.relativeFullName}}" />
+          </div>
+          <div class="col left names">
+              <span>Адрес ответственного</span>
+          </div>
+          <div class="col right">
+              <input [(ngModel)]="burial.address" placeholder="{{burial.address}}" />
+          </div>
+          <div class="col left names">
+              <span>Адрес регистрации</span>
+          </div>
+          <div class="col right">
+              <input [(ngModel)]="burial.registrationAddress" placeholder="{{burial.registrationAddress}}" />
+          </div>
+
+
+          <hr class="mt8">
+
+
+          <div class="col left names">
+              <span>Урна с прахом</span>
           </div>
           <div class="col right small">
-            <input [(ngModel)]="burial.row" placeholder="{{burial.row}}"/>
+              <input [(ngModel)]="burial.string" placeholder="{{burial.string}}" />
+          </div>
+
+          <!-- <div class="col left names">
+      <span>Дата кремации</span>
+    </div>
+    <div class="col right">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" ></mat-datepicker>
+      </mat-form-field>
+    </div> -->
+
+          <div class="col left names">
+              <span>Глубина</span>
+          </div>
+          <div class="col right small">
+              <input [(ngModel)]="burial.graveDepth" placeholder="{{burial.graveDepth}}" />
+          </div>
+
+          <div class="col left names">
+              <span>Вид захоронения</span>
+          </div>
+          <div class="col right small">
+              <input [(ngModel)]="burial.soilType" placeholder="{{burial.soilType}}" />
           </div>
 
 
+          <hr class="mt8">
 
-        <div [class.selectedGallery]="selectedPhoto !== PhotoOpen">
 
-            <div class="gallery"
-            [class.selectedPhoto]="selectedPhoto === PhotoOpen">
-    
-                    <div class="arrows-container"
-                    (click)="onBefore()">
+          <!-- <div class="col left names">
+        <span>Кладбище</span>
+    </div>
+    <div class="col right">
+          <input [(ngModel)]="burial.cemetery" placeholder="{{burial.cemetery}}"/>
+    </div>
+
+
+    <div class="col left names">
+        <span>Номер</span>
+      </div>
+      <div class="col right small">
+        <input [(ngModel)]="burial.place" placeholder="{{burial.place}}"/>
+      </div>
+
+
+      <div class="col left names">
+        <span>Сетор</span>
+      </div>
+      <div class="col right small">
+        <input [(ngModel)]="burial.sector" placeholder="{{burial.sector}}"/>
+      </div>
+
+      <div class="col left names">
+        <span>Ряд</span>
+      </div>
+      <div class="col right small">
+        <input [(ngModel)]="burial.row" placeholder="{{burial.row}}"/> -->
+          <!-- </div> -->
+
+
+
+          <div [class.selectedGallery]="selectedPhoto !== PhotoOpen">
+
+              <div class="gallery"
+                   [class.selectedPhoto]="selectedPhoto === PhotoOpen">
+
+                  <div class="arrows-container"
+                       (click)="onBefore()">
                       <i class="material-icons arrows arrow-before">
-                        navigate_before
+                          navigate_before
                       </i>
-                    </div>
-                    
-                    <!-- <img src="{{burial.imgs[number]}}" class="photo" alt=""> -->
-              
-                    <div class="arrows-container"
-                    (click)="onNext()">
-              
+                  </div>
+
+                  <!-- <img src="{{burial.imgs[number]}}" class="photo" alt=""> -->
+
+                  <div class="arrows-container"
+                       (click)="onNext()">
+
                       <i class="material-icons arrows arrow-next">
                           navigate_next
                       </i>
-                    </div>
-              
-                    <!-- <span class="counter">{{number + 1}} / {{burial.imgs.length}}</span>    -->
+                  </div>
+
+                  <!-- <span class="counter">{{number + 1}} / {{burial.imgs.length}}</span>    -->
 
 
-                    <div class="btns">
+                  <div class="btns">
                       <span class=" photoAdd" (click)="addPhoto()">ДОБАВИТЬ ФОТОГРАФИЮ</span>
                       <span class=" del" (click)="addPhoto()">УДАЛИТЬ ФОТОГРАФИЮ</span>
-                    </div>
-                    
-            </div>
-            
-          <span class="b_left add button" 
-          (click)="onSelectPhoto()"
-          [class.selectedPhoto]="selectedPhoto !== PhotoOpen">
-          ДОБАВИТЬ ФОТОГРАФИЮ
-          </span>
+                  </div>
 
-        </div>
-        
-        <div class="buttons">
-            <span class="b_right button" (click)="save(cemetery)" style="color:#0070c0">ДОБАВИТЬ</span>
-          <span class="b_right button" (click)="onSelectClose(cemetery)">ОТМЕНИТЬ</span>
-        </div>
+              </div>
 
-        
-        
-  
-    </div>
+              <span class="b_left add button"
+                    (click)="onSelectPhoto()"
+                    [class.selectedPhoto]="selectedPhoto !== PhotoOpen">
+                  ДОБАВИТЬ ФОТОГРАФИЮ
+              </span>
+
+          </div>
+
+          <div class="buttons">
+              <span class="b_right button" (click)="save(cemetery)" style="color:#0070c0">ДОБАВИТЬ</span>
+              <span class="b_right button" (click)="onSelectClose(cemetery)">ОТМЕНИТЬ</span>
+          </div>
+
+
+
+
+      </div>
   </div>
 </div>

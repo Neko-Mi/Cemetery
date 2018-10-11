@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Sector } from '../sector';
-import { SectorService }  from '../sector.service';
+import { SectorService } from '../sector.service';
+import { CemeteryService } from '../cemetery.service';
+import { Cemetery } from '../cemetery';
 @Component({
   selector: 'app-add-sector',
   templateUrl: './add-sector.component.html',
@@ -13,7 +15,7 @@ export class AddSectorComponent implements OnInit {
 
   @Output() onClose = new EventEmitter<boolean>();
 
-  cemeteries: Sector[] = [];
+  cemeteries: Cemetery[] = [];
 
   close: boolean = !open;
   number:number = 0;
@@ -27,6 +29,10 @@ export class AddSectorComponent implements OnInit {
   sectornochange: Sector = new Sector(); // данные вводимого пользователя
 
   sector: Sector = new Sector(); // данные вводимого пользователя
+  // cemetery: Cemetery = new Cemetery(); // данные вводимого пользователя
+
+  // IdForCemetery: string ;
+  
       
   //receivedSector: Sector; // полученный пользователь
   done: boolean = false;
@@ -34,7 +40,9 @@ export class AddSectorComponent implements OnInit {
 
   save(sector: Sector) {
     // 'post' using for creating new object in database
-    // 
+      // 
+    // sector.cemeteryId = parseInt(this.IdForCemetery); 
+    // console.log(this.IdForCemetery + " " + sector.sectorName);
     this.sectorService.createSector(sector)
       .subscribe(
         (data: Sector) => { this.sector = data; this.done = true; },
@@ -52,7 +60,14 @@ export class AddSectorComponent implements OnInit {
     this.onClose.emit(this.open);
     if(this.selectedPhoto == true)
       this.selectedPhoto = false;
-  }
+    }
+
+    selectableCemeteries(): void {
+        this.cemeteryService.getCemeterys()
+            .subscribe((data: Cemetery[]) => this.cemeteries = data);
+          
+
+    }
 
   // onBefore(): void {
   //   this.number--;
@@ -92,9 +107,11 @@ export class AddSectorComponent implements OnInit {
     this.open = !this.open;  
   }
 
-  constructor( private sectorService: SectorService) { }
+    constructor(private sectorService: SectorService,
+        private cemeteryService: CemeteryService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.selectableCemeteries();
+    }
 
 }

@@ -5,7 +5,7 @@ export class Sector {
     sectorName: string;
     createdDate: Date;
     changeDate: Date;
-    cemetery: Cemetery;
+    cemeteryId: number;
 
     // cemetery: string;
     // sectors: number;
