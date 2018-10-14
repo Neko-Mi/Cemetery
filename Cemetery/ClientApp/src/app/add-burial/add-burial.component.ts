@@ -48,8 +48,9 @@ export class AddBurialComponent implements OnInit {
         (data: Burial) => { this.burial = data; this.done = true; },
         error => console.log(error)
       );
-
-    console.log(`placeId: ${this.burial.placeId}, surname: ${this.burial.surname}, name: ${this.burial.name},
+// ${this.places[this.burial.placeId].number}
+    console.log(`placeId: ${this.burial.placeId}, 
+     surname: ${this.burial.surname}, name: ${this.burial.name},
                  patronymic: ${this.burial.patronymic}`);
     this.onSelectClose();
   }
