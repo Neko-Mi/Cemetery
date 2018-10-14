@@ -99,7 +99,8 @@
 
         <div [class.selectedGallery]="selectedPhoto !== PhotoOpen">
 
-            <div class="gallery"
+            <div *ngIf="place.imgs"
+            class="gallery"
             [class.selectedPhoto]="selectedPhoto === PhotoOpen">
     
                     <div class="arrows-container"

@@ -1,7 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+
+
 
 import { Place } from '../place';
-import { PlaceService }  from '../place.service';
+import { PlaceService } from '../place.service';
+import { CemeteryService } from '../cemetery.service';
+import { Cemetery } from '../cemetery';
+import { Sector } from '../sector';
+import { SectorService } from '../sector.service';
 
 @Component({
   selector: 'app-add-place',
@@ -14,32 +20,36 @@ export class AddPlaceComponent implements OnInit {
 
   @Output() onClose = new EventEmitter<boolean>();
 
-  cemeteries: Place[] = [];
+  cemeteries: Cemetery[] = []; // для списка кладбищ
+  sectors: Sector[] = []; // для списка кладбищ
 
   close: boolean = !open;
-  number:number = 0;
-  selectedPhoto: boolean = false;
-  PhotoOpen:boolean = this.selectedPhoto;
+  number = 0;
+  selectedPhoto = false;
+  PhotoOpen: boolean = this.selectedPhoto;
   placenochange: Place = new Place(); // данные вводимого пользователя
 
-  place: Place = new Place(); // данные вводимого пользователя
-      
-  //receivedPlace: Place; // полученный пользователь
-  done: boolean = false;
-  
 
-  save(place: Place) {
+  idForCemetery: number;
+
+
+  place: Place = new Place(); // данные вводимого пользователя
+
+  done = false;
+
+  save(place: Place) {// отправка запроса на создание места
     // 'post' using for creating new object in database
-    // 
+    // place.cemeteryId = this.idForCemetery;
+    // console.log(`cemeteryId: ${place.cemeteryId}, sectorId: ${place.sectorId}, number: ${place.number} `);
+    // console.log(`cemeteryId, sectorId: ${place.sectorId}, number: ${place.number} `);
     this.placeService.createPlace(place)
       .subscribe(
         (data: Place) => { this.place = data; this.done = true; },
         error => console.log(error)
       );
+    console.log(`cemeteryId: ${this.place.cemeteryId}, sectorId: ${this.place.sectorId}, number: ${this.place.number} `);
     this.onSelectClose();
   }
-
-
 
 
   onSelectClose(): void {
@@ -47,25 +57,26 @@ export class AddPlaceComponent implements OnInit {
     this.number = 0;
     this.open = !this.open;
     this.onClose.emit(this.open);
-    if(this.selectedPhoto == true)
+    if (this.selectedPhoto === true) {
       this.selectedPhoto = false;
+    }
   }
 
   // onBefore(): void {
   //   this.number--;
-  //   if(this.number == -1) 
+  //   if(this.number == -1)
   //     this.number = this.place.imgs.length - 1;
   // }
 
   // onNext(): void {
   //   this.number++;
-  //   if(this.number == this.place.imgs.length) 
+  //   if(this.number == this.place.imgs.length)
   //     this.number = 0;
   // }
-  
+
   onSelectPhoto(): void {
     this.selectedPhoto =  !this.selectedPhoto;
-    //this.open = !this.open;  
+    // this.open = !this.open;
   }
 
   onClosed() {
@@ -75,11 +86,30 @@ export class AddPlaceComponent implements OnInit {
   }
 
 
+  selectableCemeteries(): void {// создание списка кладбищ
+    this.cemeteryService.getCemeterys()
+        .subscribe((data: Cemetery[]) => this.cemeteries = data);
+  }
 
 
-  constructor(    private placeService: PlaceService) { }
+
+  constructor( private placeService: PlaceService,
+    private sectorService: SectorService,
+    private cemeteryService: CemeteryService) { }
+
+
+   onCemetery() {
+    console.log(`выбрано кладбище: ${this.place.cemeteryId}, ${this.cemeteries[this.place.cemeteryId - 1].name} `);
+
+    this.sectorService.getSectors()
+      .subscribe((data: Sector[]) => this.sectors = data.filter(data1 => data1.cemeteryId === this.place.cemeteryId),
+      error => console.log(error));
+
+    console.log(this.sectors);
+   }
 
   ngOnInit() {
+    this.selectableCemeteries();
   }
 
 }

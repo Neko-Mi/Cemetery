@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
- 
+
 import { Observable, of } from 'rxjs';
- 
+
 import { Menu } from './menu';
 import { MENUS } from './mock-menu';
 import { MessageService } from './message.service';
- 
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +16,8 @@ export class SidebarService {
 
   getMenus(): Observable<Menu[]> {
     // TODO: send the message _after_ fetching the heroes
-    //this.messageService.clear();
-    //this.messageService.addnew('SectorService: fetched sectors');
+    // this.messageService.clear();
+    // this.messageService.addnew('SectorService: fetched sectors');
     return of(MENUS);
   }
 

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Menu } from '../menu';
 import { MENUS } from '../mock-menu';
 import { SidebarService } from '../sidebar.service';
+import {MessageService} from '../message.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,7 +16,8 @@ export class SidebarComponent implements OnInit {
 
   selectedMenu: Menu;
 
-  constructor(private SidebarService: SidebarService) {}
+  constructor(private sidebarService: SidebarService,
+    private messageService: MessageService) {}
 
   ngOnInit() {
     this.getMenus();
@@ -23,10 +25,11 @@ export class SidebarComponent implements OnInit {
 
   onSelect(menu: Menu): void {
     this.selectedMenu = menu;
+    // this.messageService.addnew(menu.name);
   }
 
   getMenus(): void {
-    this.SidebarService.getMenus()
+    this.sidebarService.getMenus()
         .subscribe(menus => this.menus = menus);
   }
 }

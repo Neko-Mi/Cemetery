@@ -23,7 +23,7 @@ export class Place {
     createdDate: Date;
     changedDate: Date;
 
-    // 
+    //
     sectorId: number;
-    sector: Sector;    
+    cemeteryId: number;
 }

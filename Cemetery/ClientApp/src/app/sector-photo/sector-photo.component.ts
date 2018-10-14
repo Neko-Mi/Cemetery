@@ -16,8 +16,8 @@ export class SectorPhotoComponent implements OnInit {
   @Output() onInfo = new EventEmitter<boolean>();
 
   close: boolean = !open;
-  number:number = 0;
- 
+  number = 0;
+
   onSelectClose(): void {
     this.number = 0;
     this.open = !this.open;
@@ -29,17 +29,21 @@ export class SectorPhotoComponent implements OnInit {
     this.open = !this.open;
   }
 
+  // Переключатели фотографий
   onBefore(): void {
     this.number--;
-    if(this.number == -1) 
-    this.number = this.sector.imgs.length - 1;
+    if (this.number === -1) {
+      this.number = this.sector.imgs.length - 1;
+    }
   }
 
   onNext(): void {
     this.number++;
-    if(this.number == this.sector.imgs.length) 
+    if (this.number === this.sector.imgs.length) {
       this.number = 0;
+    }
   }
+  // Переключатели фотографий - енд
 
   constructor() { }
 

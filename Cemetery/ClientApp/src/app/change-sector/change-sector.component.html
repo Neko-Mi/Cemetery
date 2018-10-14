@@ -27,8 +27,9 @@
 
 
           <div [class.selectedGallery]="selectedPhoto !== PhotoOpen">
-
-              <div class="gallery"
+<!-- *ngIf="sector.photo !== null" -->
+              <div *ngIf="sector.imgs"
+                    class="gallery"
                    [class.selectedPhoto]="selectedPhoto === PhotoOpen">
 
                   <div class="arrows-container"
