@@ -22,7 +22,8 @@
 
   <hr class="tophr">  
   
-  <div class="gallery">
+  <div *ngIf="sector.imgs ; else elseBlock"
+   class="gallery">
 
       <div class="arrows-container"
       (click)="onBefore()">
@@ -48,6 +49,7 @@
       
        
   </div>
+  <ng-template #elseBlock>Фотографии нет</ng-template>
   
   
 

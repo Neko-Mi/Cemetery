@@ -24,7 +24,7 @@ export class CemeteryService {
 
     getCemeterys() {
         // TODO: send the message _after_ fetching the heroes
-        this.messageService.addnew('Кладбища');
+        this.messageService.addnew('Кладбище');
 
         return this.http.get(this.url);
     }

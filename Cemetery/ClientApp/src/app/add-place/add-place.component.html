@@ -30,12 +30,31 @@
       <input [(ngModel)]="place.sector" placeholder="{{place.sector}}"/>
     </div> -->
 
-    <!-- <div class="col left names">
-      <span>Ряд</span>
+    <div class="col left names">
+        <span>Кладбище</span>
     </div>
-    <div class="col right small">
-      <input [(ngModel)]="place.row" placeholder="{{place.row}}"/>
-    </div> -->
+    <div class="col right">
+        <mat-form-field>
+            <mat-select placeholder="Кладбище"   [(ngModel)]="place.cemeteryId">
+                <mat-option *ngFor="let cemetery of cemeteries" (click)="onCemetery()" [value]="cemetery.id">
+                    {{cemetery.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="place.cemeteryId" class="col left names">
+        <span>Сектор</span>
+    </div>
+    <div *ngIf="place.cemeteryId" class="col right">
+        <mat-form-field>
+            <mat-select placeholder="Сектор"  [(ngModel)]="place.sectorId">
+                <mat-option *ngFor="let sector of sectors" [value]="sector.id">
+                    {{sector.sectorName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
 
     
     <hr class="mt8">
@@ -139,8 +158,8 @@
         </div>
         
         <div class="buttons">
-            <span class="b_right button" (click)="save(cemetery)" style="color:#0070c0">ДОБАВИТЬ</span>
-          <span class="b_right button" (click)="onSelectClose(cemetery)">ОТМЕНИТЬ</span>
+            <span class="b_right button" (click)="save(place)" style="color:#0070c0">ДОБАВИТЬ</span>
+          <span class="b_right button" (click)="onSelectClose()">ОТМЕНИТЬ</span>
         </div>
 
         

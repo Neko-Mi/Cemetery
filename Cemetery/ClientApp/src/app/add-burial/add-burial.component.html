@@ -167,6 +167,46 @@
 
           <hr class="mt8">
 
+          <div class="col left names">
+            <span>Кладбище</span>
+        </div>
+        <div class="col right">
+            <mat-form-field>
+                <mat-select placeholder="Кладбище"   [(ngModel)]="idForCemetery">
+                    <mat-option *ngFor="let cemetery of cemeteries" (click)="onCemetery()" [value]="cemetery.id">
+                        {{cemetery.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    
+        <div *ngIf="idForCemetery" class="col left names">
+            <span>Сектор</span>
+        </div>
+        <div *ngIf="idForCemetery" class="col right">
+            <mat-form-field>
+                <mat-select placeholder="Сектор"  [(ngModel)]="idForSector">
+                    <mat-option *ngFor="let sector of sectors" (click)="onSector()" [value]="sector.id">
+                        {{sector.sectorName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div *ngIf="idForSector" class="col left names">
+            <span>Место</span>
+        </div>
+        <div *ngIf="idForSector" class="col right">
+            <mat-form-field>
+                <mat-select placeholder="Место"  [(ngModel)]="burial.placeId">
+                    <mat-option *ngFor="let place of places" [value]="place.id">
+                        {{place.number}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    
+
 
           <!-- <div class="col left names">
         <span>Кладбище</span>
@@ -241,8 +281,8 @@
           </div>
 
           <div class="buttons">
-              <span class="b_right button" (click)="save(cemetery)" style="color:#0070c0">ДОБАВИТЬ</span>
-              <span class="b_right button" (click)="onSelectClose(cemetery)">ОТМЕНИТЬ</span>
+              <span class="b_right button" (click)="save(burial)" style="color:#0070c0">ДОБАВИТЬ</span>
+              <span class="b_right button" (click)="onSelectClose()">ОТМЕНИТЬ</span>
           </div>
 
 

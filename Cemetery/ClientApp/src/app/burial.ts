@@ -5,10 +5,10 @@ export class Burial {
     id?: number;
     surname?: string;
     name?: string;
-    patronymic?: string;    
+    patronymic?: string;
     deathDate?: Date;
     birthDate?: Date;
-    burialDate?: Date; 
+    burialDate?: Date;
     imgs?: string[];
     changeDate?: Date;
     createDate?: Date;

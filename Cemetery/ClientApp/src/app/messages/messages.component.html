@@ -2,7 +2,10 @@
 
    <div *ngIf="messageService.messages.length">
 
+    <!-- <span> {{message}} </span> -->
     <span *ngFor='let message of messageService.messages'> {{message}} </span>
+    <!-- <div *ngIf="message$ | async as message" class="alert alert-success">{{message}}</div> -->
+
   
   </div>
 
