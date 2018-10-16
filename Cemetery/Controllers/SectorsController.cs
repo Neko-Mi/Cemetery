@@ -59,18 +59,14 @@ namespace CemeteryApp
             return db.Sectors.ToList();
         }
 
-        // api/Sectors/id
-        // return full info of one Sector
-        [HttpGet("{id}")]
-        public IActionResult GetSector(int id)
+        // api/Sectors/page
+        [HttpGet("{page}")]
+        public IActionResult GetSector(int page)
         {
-            var Sector = db.Sectors.Find(id);
-            // допиши этот кусок со всеми
-            // инклудами
-            // выборкой по странице
-            // дополнительные фильтры мб?
+            int pageSize = 30;
+            var sectors = db.Sectors.Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
-            return new JsonResult(Sector);
+            return new JsonResult(sectors);
         }
 
         // api/Sectors

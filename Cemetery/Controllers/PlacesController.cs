@@ -57,15 +57,17 @@ namespace CemeteryApp
 
             return shorts;
         }
-
-        // api/Places/id
-        // return full info of one Place
-        [HttpGet("{id}")]
-        public IActionResult GetPlace(int id)
+        
+        // Метод для постраничной навигации
+        // api/Places/page
+        [HttpGet("{page}")]
+        public IActionResult GetPlace(int page)
         {
-            var Place = db.Places.Find(id);
+            int pageSize = 30;
+            // var Place = db.Places.Find(id);
+            var places = db.Places.Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
-            return new JsonResult(Place);
+            return new JsonResult(places);
         }
 
         // api/Places

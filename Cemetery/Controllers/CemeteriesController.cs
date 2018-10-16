@@ -41,14 +41,17 @@ namespace CemeteryApp
             return db.Cemeteries.ToList();
         }
 
-        // api/Cemeteries/id
-        // return full info of one Cemetery
-        [HttpGet("{id}")]
-        public IActionResult GetCemetery(int id)
+        // Метод возвращает кладбища
+        // для страницы
+        // api/Cemeteries/page
+        [HttpGet("{page}")]
+        public IActionResult GetCemetery(int page)
         {
-            var Cemetery = db.Cemeteries.Find(id);
+            int pageSize = 30;
+            // var Cemetery = db.Cemeteries.Find(id);
+            var cemeteries = db.Cemeteries.Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
-            return new JsonResult(Cemetery);
+            return new JsonResult(cemeteries);
         }
 
         // api/Cemeteries
@@ -60,6 +63,9 @@ namespace CemeteryApp
             {
                 return BadRequest();
             }
+
+            Cemetery.ChangeDate = DateTime.Now;
+            Cemetery.CreateDate = DateTime.Now;
 
             db.Cemeteries.Add(Cemetery);
             db.SaveChanges();

@@ -68,18 +68,14 @@ namespace CemeteryApp
             return burialViews;
         }
 
-        // api/people/id
-        // return full info of one person
-        [HttpGet("{id}")]
-        public IActionResult GetPerson(int id)
+        // api/people/page
+        [HttpGet("{page}")]
+        public IActionResult GetPerson(int page)
         {
-            var person = db.Burials.Find(id);
-            // допиши этот кусок со всеми
-            // инклудами
-            // выборкой по странице
-            // дополнительные фильтры мб?
+            int pageSize = 30;
+            var burials = db.Burials.Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
-            return new JsonResult(person);
+            return new JsonResult(burials);
         }
 
         // api/people
