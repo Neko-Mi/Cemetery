@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-// import { Observable, of } from 'rxjs';
-// import { catchError, map, tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { Cemetery } from './cemetery';
 import { MessageService } from './message.service';
@@ -49,4 +49,29 @@ export class CemeteryService {
 
         return this.http.delete<Cemetery>(this.url + '/' + id);
     }
+
+
+    // createCemetery1(cem: Cemetery, fileToUpload: File) {
+    //     if (fileToUpload) {
+    //         const formData: FormData = new FormData();
+    //         formData.append('fileKey', fileToUpload, fileToUpload.name);
+    //         formData.append('data', JSON.stringify(this.cem));
+    //         return this.http.post(this.url, formData);
+    //     } else {
+    //         return this.http.post(this.url, cem);
+    //     }
+
+    // }
+    // postFile(fileToUpload: File)/*: Observable<boolean>*/ {
+    //     // const endpoint = 'your-destination-url';
+    //     const formData: FormData = new FormData();
+    //     formData.append('fileKey', fileToUpload, fileToUpload.name);
+    //     formData.append('data', JSON.stringify(this.form));
+    //     return this.http.post(this.url, formData);
+    //     //   .map(() => { return true; })
+    //     //   .catch((e) => this.handleError(e));
+    //   }
+    // handleError(e: any): any {
+    //     throw new Error('Method not implemented.');
+    // }
 }

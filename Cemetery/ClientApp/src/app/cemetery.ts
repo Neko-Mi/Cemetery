@@ -9,5 +9,6 @@ export class Cemetery {
     // area: number;
     changeDate: Date;
     createdDate: Date;
-    imgs: string[];
+    imgs: string[] = [];
+    files: File[] = [];
 }

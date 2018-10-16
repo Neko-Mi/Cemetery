@@ -65,18 +65,39 @@
                     </div>
                     
             </div>
-            
-          <span class="b_left add button" 
+
+            <div class="form-group">
+              <!-- <button mat-button ></button> -->
+                <button mat-button for="file" >
+                  <label for="file">ДОБАВИТЬ ФОТОГРАФИЮ
+              <input   type="file"
+                     id="file"
+                     multiple
+                     accept="image/jpeg,image/png"
+                     (change)="handleFileInput($event.target.files)">
+                  </label>
+              </button>
+              <img #Image class="upImage">
+              <img *ngFor="let image of images" class="upImage">
+              <img #{{image}} class="upImage">
+          </div>
+
+          <!-- <img #profileImage  src="assets/images/empty-profile.png" alt="" 
+          class="profile-image" (click)="this.profileImageInput.click()">
+          <input type="file"  hidden #profileImageInput formControlName="image"
+          accept="image/jpeg,image/png,image/gif" (change)="imageChoosed($event)">
+             -->
+          <!-- <span class="b_left add button" 
           (click)="onSelectPhoto()"
           [class.selectedPhoto]="selectedPhoto !== PhotoOpen">
           ДОБАВИТЬ ФОТОГРАФИЮ
-          </span>
+          </span> -->
 
         </div>
         
         <div class="buttons">
-            <span class="b_right button" (click)="save(cemetery)" style="color:#0070c0">ДОБАВИТЬ</span>
-          <span class="b_right button" (click)="onSelectClose(cemetery)">ОТМЕНИТЬ</span>
+            <span class="b_right button" (click)="save()" style="color:#0070c0">ДОБАВИТЬ</span>
+          <span class="b_right button" (click)="onSelectClose()">ОТМЕНИТЬ</span>
         </div>
 
         
