@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CemeteryApp.Models;
+using CemeteryApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CemeteryApp
@@ -22,16 +23,47 @@ namespace CemeteryApp
             return db.Places.ToList();
         }
 
+        // Получение Всех "коротких" мест захоронений
+        // для карточек изменения/создания
+        // ../api/places/short
+        [HttpGet]
+        [Route("api/[controller]/[action]")]
+        public IEnumerable<PlaceShort> Short()
+        {
+            var shorts = new List<PlaceShort>();
+
+            foreach(var place in db.Places)
+            {
+                shorts.Add(new PlaceShort(place));
+            }
+
+            return shorts;
+        }
+
+        // Получения "коротких" мест захоронений, которые
+        // принадлежат сектору с Id передаваемым
+        // в параметре
+        // ../api/places/short/5
+        [HttpGet("{id}")]
+        [Route("api/[controller]/[action]/{id}")]
+        public IEnumerable<PlaceShort> Short(int id)
+        {
+            var shorts = new List<PlaceShort>();
+
+            foreach(var place in db.Places.Where(pl => pl.sectorId == id))
+            {
+                shorts.Add(new PlaceShort(sector));
+            }
+
+            return shorts;
+        }
+
         // api/Places/id
         // return full info of one Place
         [HttpGet("{id}")]
         public IActionResult GetPlace(int id)
         {
             var Place = db.Places.Find(id);
-            // допиши этот кусок со всеми
-            // инклудами
-            // выборкой по странице
-            // дополнительные фильтры мб?
 
             return new JsonResult(Place);
         }

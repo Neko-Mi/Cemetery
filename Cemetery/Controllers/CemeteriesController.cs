@@ -16,6 +16,23 @@ namespace CemeteryApp
             db = context;
         }
 
+        // Метод для коротких записей кладбищей
+        // для выбора в карточках добавления/изменения
+        // api/[controller]/[action]
+        [HttpGet]
+        [Route("api/[controller]/[action]")]
+        public IEnumerable<CemeteryShort> Short()
+        {
+            var shorts = new List<CemeteryShort>();
+            
+            foreach(var cemetery in db.Cemeteries)
+            {
+                shorts.Add(new CemeteryShort(cemetery));
+            }
+
+            return shorts;
+        }
+
         // api/Cemeteries
         // return all Cemeteriess
         [HttpGet]
