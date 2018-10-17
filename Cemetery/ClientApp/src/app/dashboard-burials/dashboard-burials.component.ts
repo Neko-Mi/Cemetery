@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PageEvent} from '@angular/material';
 
 import { Burial } from '../burial';
 import { BurialService } from '../burial.service';
@@ -11,7 +12,11 @@ import { BurialService } from '../burial.service';
 })
 export class DashboardBurialsComponent implements OnInit {
 
-    burials: Burial[];
+    pageEvent: PageEvent;
+    length = 100;
+    pageSize = 30;
+
+    burials: Burial[] = [];
 
     selectedBurial: Burial;
 
@@ -48,7 +53,8 @@ export class DashboardBurialsComponent implements OnInit {
 
     getBurials(): void {
         this.burialService.getBurials()
-            .subscribe((data: Burial[]) => this.burials = data);
+            .subscribe((data: Burial[]) => {this.burials = data; console.log(data); });
+        // console.log(this.burials);
     }
 
 }

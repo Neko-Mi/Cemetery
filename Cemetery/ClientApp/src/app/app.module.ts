@@ -42,6 +42,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
+import {MatPaginatorModule} from '@angular/material/paginator';
 //// ANGULAR MATERIAL END////
 
 import { AddSwitchComponent } from './add-switch/add-switch.component';
@@ -97,7 +98,8 @@ import { AddBurialComponent } from './add-burial/add-burial.component';
      MatMenuModule,
      MatDatepickerModule,
       MatNativeDateModule,
-      MatSelectModule
+      MatSelectModule,
+      MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -34,7 +34,14 @@
          
       </a> 
   </div>
-  
+
 </div>
+
+<mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="pageEvent = $event">
+</mat-paginator>
+
 <app-burials-details [burial]="selectedBurial" [open]="open_detail" (onClose)="onClosedDetails()" ></app-burials-details>
 <app-change-burial [burial]="selectedBurial" [open]="open_change" (onClose)="onClosedChange()"></app-change-burial>

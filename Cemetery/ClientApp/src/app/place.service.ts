@@ -22,7 +22,7 @@ export class PlaceService {
         // TODO: send the message _after_ fetching the heroes
         this.messageService.addnew('Места захоронений');
 
-        return this.http.get(this.url);
+        return this.http.get(this.url + '/1');
     }
 
 //   getPlace(id: number): Observable<Place> {

@@ -26,7 +26,7 @@ export class CemeteryService {
         // TODO: send the message _after_ fetching the heroes
         this.messageService.addnew('Кладбище');
 
-        return this.http.get(this.url);
+        return this.http.get(this.url + '/1');
     }
 
     // getCemetery(id: number): Observable<Cemetery> {
